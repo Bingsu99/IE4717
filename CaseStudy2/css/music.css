@@ -1,0 +1,18 @@
+.content {
+  margin: 2rem;
+}
+thead {
+  text-align: left;
+  background-color: #e2d1b2;
+}
+table {
+  margin: auto;
+}
+
+td {
+  display: flex;
+}
+
+td div{
+    margin: 1.3rem;
+}
