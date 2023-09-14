@@ -1,13 +1,13 @@
 table {
   margin-left: 100px;
-  margin-bottom: 30px;
   width: 625px;
+  margin-bottom: 30px;
 }
 td {
-  padding: 10px;
+  color: #000000;
   border-style: none;
-  color: #221811;
   font-size: 16px;
+  padding: 10px;
 }
 
 .table_title {
@@ -17,9 +17,8 @@ td {
 }
 
 tr:nth-of-type(even) {
-  background-color: #f5f5dd;
+  background-color: #f5f4de;
 }
 tr:nth-of-type(odd) {
-  background-color: #d1b38e;
-  color: #eaeaea;
+  background-color: #d1b48e;
 }
