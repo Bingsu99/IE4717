@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>JavaJam Coffee House</title>
+    <script type="text/javascript" src="jobs_validator.js"></script>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/jobs.css" />
@@ -44,18 +45,20 @@
                 name="Name"
                 id="Name"
                 placeholder="Enter your name here"
+                required
               />
 
               <label for="Email">*E-mail:</label>
               <input
-                type="text"
+                type="email"
                 name="Email"
                 id="Email"
                 placeholder="Enter you Email-ID here"
+                required
               />
 
               <label for="startDate">Start Date:</label>
-              <input type="date" name="startDate" id="startDate" />
+              <input type="date" name="startDate" id="startDate" required />
 
               <label for="Experience">*Experience:</label>
               <textarea
@@ -64,11 +67,13 @@
                 rows="4"
                 cols="30"
                 placeholder="Enter your past experievce here"
+                required
               ></textarea>
 
               <input id="clear" type="reset" value="Clear" />
               <input id="Submit" type="submit" value="Apply Now" />
             </form>
+            <script type="text/javascript" src="jobs_onchange.js"></script>
           </div>
         </div>
       </div>
