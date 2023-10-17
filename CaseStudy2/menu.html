@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/menu.css" />
+    <script type="text/javaScript" src="./js/menu.js"></script>
   </head>
   <body>
     <div id="wrapper">
@@ -42,57 +43,84 @@
                     <input
                       type="number"
                       class="coffeeInput"
+                      id="justJava"
                       name="justJava"
                       step="1"
                       min="0"
                     />
                   </td>
-                  <td>Sub-Price</td>
+                  <td id="justJavaDisplay">$0</td>
                 </tr>
                 <tr>
                   <td class="table_title"><b>Cafe au Lait</b></td>
                   <td>
-                    House blended coffee infused into a smooth, steamed milk<br /><b
-                      >Single $2.00 Double $3.00</b
-                    >
+                    House blended coffee infused into a smooth, steamed milk<br />
+                    <input
+                      type="radio"
+                      name="cafeAuLaitShots"
+                      id="cafeAuLaitSingle"
+                      value="single"
+                      checked
+                    />
+                    <label for="single"><b>Single $2.00</b></label>
+                    <input
+                      type="radio"
+                      name="cafeAuLaitShots"
+                      id="cafeAuLaitDouble"
+                      value="double"
+                    />
+                    <label for="double"><b>Double $3.00</b></label>
                   </td>
                   <td>
                     <input
                       type="number"
                       class="coffeeInput"
+                      id="cafeAuLait"
                       name="cafeAuLait"
                       step="1"
                       min="0"
                     />
                   </td>
-                  <td>Sub-Price</td>
+                  <td id="cafeAuLaitDisplay">$0</td>
                 </tr>
                 <tr>
                   <td class="table_title"><b>Iced Cappucino</b></td>
                   <td>
                     Sweetened espresso blended with icy-cold milk and served in
                     a chilled glass<br />
-                    <input type="radio" name="shots" value="single" checked />
-                    <label for="html"><b>Single $4.75</b></label>
-                    <input type="radio" name="shots" value="double" />
-                    <label for="css"><b>Double $5.75</b></label>
+                    <input
+                      type="radio"
+                      name="cappucinoShots"
+                      id="cappucinoSingle"
+                      value="single"
+                      checked
+                    />
+                    <label for="single"><b>Single $4.75</b></label>
+                    <input
+                      type="radio"
+                      name="cappucinoShots"
+                      id="cappucinoDouble"
+                      value="double"
+                    />
+                    <label for="double"><b>Double $5.75</b></label>
                   </td>
                   <td>
                     <input
                       type="number"
                       class="coffeeInput"
+                      id="cappucino"
                       name="cappucino"
                       step="1"
                       min="0"
                     />
                   </td>
-                  <td>Sub-Price</td>
+                  <td id="cappucinoDisplay">$0</td>
                 </tr>
                 <tr>
                   <td class="table_title"></td>
                   <td></td>
                   <td>Total:</td>
-                  <td>Total-Price</td>
+                  <td id="totalPriceDisplay">Total-Price</td>
                 </tr>
               </table>
             </div>
