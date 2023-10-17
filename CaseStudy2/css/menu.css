@@ -30,3 +30,11 @@ tr:nth-of-type(odd) {
   padding-left: 10px;
   text-align: center;
 }
+
+#justJavaDisplay,
+#cafeAuLaitDisplay,
+#cappucinoDisplay {
+  height: 50px;
+  width: 60px;
+  text-align: center;
+}
