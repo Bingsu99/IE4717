@@ -22,3 +22,11 @@ tr:nth-of-type(even) {
 tr:nth-of-type(odd) {
   background-color: #d1b48e;
 }
+
+.coffeeInput {
+  height: 50px;
+  width: 50px;
+  font-size: x-large;
+  padding-left: 10px;
+  text-align: center;
+}

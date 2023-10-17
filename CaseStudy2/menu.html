@@ -38,6 +38,16 @@
                     Regular house blend, decaffinated coffee, or flavour of the
                     day<br /><b>Endless Cup $2.00</b>
                   </td>
+                  <td>
+                    <input
+                      type="number"
+                      class="coffeeInput"
+                      name="justJava"
+                      step="1"
+                      min="0"
+                    />
+                  </td>
+                  <td>Sub-Price</td>
                 </tr>
                 <tr>
                   <td class="table_title"><b>Cafe au Lait</b></td>
@@ -46,13 +56,43 @@
                       >Single $2.00 Double $3.00</b
                     >
                   </td>
+                  <td>
+                    <input
+                      type="number"
+                      class="coffeeInput"
+                      name="cafeAuLait"
+                      step="1"
+                      min="0"
+                    />
+                  </td>
+                  <td>Sub-Price</td>
                 </tr>
                 <tr>
                   <td class="table_title"><b>Iced Cappucino</b></td>
                   <td>
                     Sweetened espresso blended with icy-cold milk and served in
-                    a chilled glass<br /><b>Single $4.75 Double $5.75</b>
+                    a chilled glass<br />
+                    <input type="radio" name="shots" value="single" checked />
+                    <label for="html"><b>Single $4.75</b></label>
+                    <input type="radio" name="shots" value="double" />
+                    <label for="css"><b>Double $5.75</b></label>
                   </td>
+                  <td>
+                    <input
+                      type="number"
+                      class="coffeeInput"
+                      name="cappucino"
+                      step="1"
+                      min="0"
+                    />
+                  </td>
+                  <td>Sub-Price</td>
+                </tr>
+                <tr>
+                  <td class="table_title"></td>
+                  <td></td>
+                  <td>Total:</td>
+                  <td>Total-Price</td>
                 </tr>
               </table>
             </div>
