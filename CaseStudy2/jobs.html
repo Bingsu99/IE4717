@@ -1,88 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>JavaJam Coffee House</title>
-    <script type="text/javascript" src="./js/jobs_validator.js"></script>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="./css/global.css" />
-    <link rel="stylesheet" href="./css/jobs.css" />
-  </head>
-  <body>
-    <div id="wrapper">
-      <header>
-        <img
-          src="./images/javalogo.jpg"
-          alt="JavaJam Coffee House"
-          width="619"
-          height="117"
-        />
-      </header>
-      <div id="colwrapper">
-        <div id="leftcolumn">
-          <nav>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="menu.html">Menu</a></li>
-              <li><a href="music.html">Music</a></li>
-              <li><a href="jobs.html">Jobs</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div id="rightcolumn">
-          <div class="content">
-            <!--  -->
-            <h2>Jobs at JavaJam</h2>
-            <p>
-              want to work at JavaJam? Fill out the form below to start your
-              application. Required fields are marked with an asterisk *
-            </p>
 
-            <!-- form [name, email, date, exp] -->
-            <form action="show_post.php" method="post">
-              <label for="Name">*Name:</label>
-              <input
-                type="text"
-                name="Name"
-                id="Name"
-                placeholder="Enter your name here"
-                required
-              />
+<head>
+  <title>JavaJam Coffee House</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="./css/global.css" />
+  <link rel="stylesheet" href="./css/jobs.css" />
+  <script type="text/javascript" src="./js/jobs_validator.js"></script>
+</head>
 
-              <label for="Email">*E-mail:</label>
-              <input
-                type="email"
-                name="Email"
-                id="Email"
-                placeholder="Enter you Email-ID here"
-                required
-              />
+<body>
+  <div id="wrapper">
+    <header>
+      <img src="./images/javalogo.jpg" alt="JavaJam Coffee House" width="619" height="117" />
+    </header>
+    <div id="colwrapper">
+      <div id="leftcolumn">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div id="rightcolumn">
+        <div class="content">
+          <!--  -->
+          <h2>Jobs at JavaJam</h2>
+          <p>
+            want to work at JavaJam? Fill out the form below to start your
+            application. Required fields are marked with an asterisk *
+          </p>
 
-              <label for="startDate">Start Date:</label>
-              <input type="date" name="startDate" id="startDate" required />
+          <!-- form [name, email, date, exp] -->
+          <form name="jobForm" action="show_post.php" method="post">
+            <label for="name">*Name:</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name here" onchange="chkName()" />
 
-              <label for="Experience">*Experience:</label>
-              <textarea
-                name="Experience"
-                id="Experience"
-                rows="4"
-                cols="30"
-                placeholder="Enter your past experievce here"
-                required
-              ></textarea>
+            <label for="Email">*E-mail:</label>
+            <input type="email" name="email" id="email" placeholder="Enter you Email-ID here" onchange="chkEmail()" />
 
-              <input id="clear" type="reset" value="Clear" />
-              <input id="Submit" type="submit" value="Apply Now" />
-            </form>
-            <script type="text/javascript" src="./js/jobs_onchange.js"></script>
-          </div>
+            <label for="startDate">Start Date:</label>
+            <input type="date" name="date" id="date" onchange="chkStartDate()" />
+
+            <label for="experience">*Experience:</label>
+            <textarea name="experience" id="experience" rows="4" cols="30" placeholder="Enter your past experievce here"
+              onchange="chkExp()"></textarea>
+
+            <input id="clear" type="reset" value="Clear" />
+            <input id="Submit" type="submit" value="Apply Now" />
+          </form>
+          <!-- <script type="text/javascript" src="./js/jobs_onchange.js"></script> -->
         </div>
       </div>
-      <footer>
-        <i> Copyright &copy; 2014 JavaJam Coffee House</i><br /><a
-          href="mailto:binghong@lim.com"
-          >binghong@lim.com</a
-        ><br /><a href="mailto:zhixin@chow.com">zhixin@chow.com</a>
-      </footer>
     </div>
-  </body>
+    <footer>
+      <i> Copyright &copy; 2014 JavaJam Coffee House</i><br /><a
+        href="mailto:binghong@lim.com">binghong@lim.com</a><br /><a href="mailto:zhixin@chow.com">zhixin@chow.com</a>
+    </footer>
+  </div>
+</body>
+
 </html>
