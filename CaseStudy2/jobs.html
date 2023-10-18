@@ -37,17 +37,17 @@
           <!-- form [name, email, date, exp] -->
           <form name="jobForm" action="show_post.php" method="post">
             <label for="name">*Name:</label>
-            <input type="text" name="name" id="name" placeholder="Enter your name here" onchange="chkName()" />
+            <input type="text" name="name" id="name" placeholder="Enter your name here" onchange="chkName()" required/>
 
             <label for="Email">*E-mail:</label>
-            <input type="email" name="email" id="email" placeholder="Enter you Email-ID here" onchange="chkEmail()" />
+            <input type="email" name="email" id="email" placeholder="Enter you Email-ID here" onchange="chkEmail()" required/>
 
             <label for="startDate">Start Date:</label>
-            <input type="date" name="date" id="date" onchange="chkStartDate()" />
+            <input type="date" name="date" id="date" onchange="chkStartDate()" required/>
 
             <label for="experience">*Experience:</label>
             <textarea name="experience" id="experience" rows="4" cols="30" placeholder="Enter your past experievce here"
-              onchange="chkExp()"></textarea>
+              onchange="chkExp()" required></textarea>
 
             <input id="clear" type="reset" value="Clear" />
             <input id="Submit" type="submit" value="Apply Now" />
