@@ -1,4 +1,4 @@
-// // Added by Bing
+// // Added in for submission of form
 nameValid = false;
 emailValid = false;
 startDateValid = false;
