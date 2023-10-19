@@ -67,7 +67,7 @@ function chkEmail() {
 
   //make sure it is not empty
   if (email.length > 0) {
-    var regexp = /^([\w\.-])+@([\w]+\.){1,4}([A-z]){2,3}$/;
+    var regexp = /^([\w\.-])+@([\w]+\.){1,3}([A-z]){2,3}$/;
     if (regexp.test(email)) {
       emailValid = true;
       checkFields();
