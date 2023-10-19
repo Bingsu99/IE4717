@@ -14,7 +14,10 @@ function checkFields() {
     experienceValid == true
   ) {
     submitButton.disabled = false;
+  } else {
+    submitButton.disabled = true;
   }
+
   // if (nameValid == false) {
   //   chkName();
   // }
@@ -47,11 +50,13 @@ function chkName() {
         "Name has incorrect format, please enter alphabetical symbols separated with a blankspace."
       );
       nameValid = false;
+      checkFields();
       return false;
     }
   }
   alert("Please fill in your name." + name);
   nameValid = false;
+  checkFields();
   return false;
 }
 
@@ -70,12 +75,14 @@ function chkEmail() {
     } else {
       alert("Email entered in wrong format.");
       emailValid = false;
+      checkFields();
       return false;
     }
   }
 
   alert("Please fill in your email." + email);
   emailValid = false;
+  checkFields();
   return false;
 }
 
@@ -106,6 +113,7 @@ function chkStartDate() {
   }
   alert("Date must be in the future. \n You chosen: " + date);
   startDateValid = false;
+  checkFields();
   return false;
 }
 
@@ -121,5 +129,6 @@ function chkExp() {
   }
   alert("Please fill in your experience." + experience);
   experienceValid = false;
+  checkFields();
   return false;
 }
