@@ -17,19 +17,6 @@ function checkFields() {
   } else {
     submitButton.disabled = true;
   }
-
-  // if (nameValid == false) {
-  //   chkName();
-  // }
-  // if (emailValid == false) {
-  //   chkEmail();
-  // }
-  // if (startDateValid == false) {
-  //   chkStartDate();
-  // }
-  // if (experienceValid == false) {
-  //   chkExp();
-  // }
 }
 
 // checking name
