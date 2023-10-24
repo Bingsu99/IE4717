@@ -32,97 +32,106 @@
           <div class="content">
             <h2 style="margin-left: 20px">Coffee at JavaJam</h2>
             <div id="section">
-              <table>
-                <tr>
-                  <td class="table_title"><b>Just Java</b></td>
-                  <td>
-                    Regular house blend, decaffinated coffee, or flavour of the
-                    day<br /><b>Endless Cup $2.00</b>
-                  </td>
-                  <td>
-                    <input
-                      type="number"
-                      class="coffeeInput"
-                      id="justJava"
-                      name="justJava"
-                      step="1"
-                      min="0"
-                    />
-                  </td>
-                  <td id="justJavaDisplay">$0</td>
-                </tr>
-                <tr>
-                  <td class="table_title"><b>Cafe au Lait</b></td>
-                  <td>
-                    House blended coffee infused into a smooth, steamed milk<br />
-                    <input
-                      type="radio"
-                      name="cafeAuLaitShots"
-                      id="cafeAuLaitSingle"
-                      value="single"
-                      checked
-                    />
-                    <label for="single"><b>Single $2.00</b></label>
-                    <input
-                      type="radio"
-                      name="cafeAuLaitShots"
-                      id="cafeAuLaitDouble"
-                      value="double"
-                    />
-                    <label for="double"><b>Double $3.00</b></label>
-                  </td>
-                  <td>
-                    <input
-                      type="number"
-                      class="coffeeInput"
-                      id="cafeAuLait"
-                      name="cafeAuLait"
-                      step="1"
-                      min="0"
-                    />
-                  </td>
-                  <td id="cafeAuLaitDisplay">$0</td>
-                </tr>
-                <tr>
-                  <td class="table_title"><b>Iced Cappucino</b></td>
-                  <td>
-                    Sweetened espresso blended with icy-cold milk and served in
-                    a chilled glass<br />
-                    <input
-                      type="radio"
-                      name="cappucinoShots"
-                      id="cappucinoSingle"
-                      value="single"
-                      checked
-                    />
-                    <label for="single"><b>Single $4.75</b></label>
-                    <input
-                      type="radio"
-                      name="cappucinoShots"
-                      id="cappucinoDouble"
-                      value="double"
-                    />
-                    <label for="double"><b>Double $5.75</b></label>
-                  </td>
-                  <td>
-                    <input
-                      type="number"
-                      class="coffeeInput"
-                      id="cappucino"
-                      name="cappucino"
-                      step="1"
-                      min="0"
-                    />
-                  </td>
-                  <td id="cappucinoDisplay">$0</td>
-                </tr>
-                <tr>
-                  <td class="table_title"></td>
-                  <td></td>
-                  <td>Total:</td>
-                  <td id="totalPriceDisplay">$0</td>
-                </tr>
-              </table>
+              <form
+                name="orderForm"
+                action="./php/show_order.php"
+                method="post"
+              >
+                <table>
+                  <tr>
+                    <td class="table_title"><b>Just Java</b></td>
+                    <td>
+                      Regular house blend, decaffinated coffee, or flavour of
+                      the day<br /><b>Endless Cup $2.00</b>
+                    </td>
+                    <td>
+                      <input
+                        type="number"
+                        class="coffeeInput"
+                        id="justJava"
+                        name="justJava"
+                        step="1"
+                        min="0"
+                      />
+                    </td>
+                    <td id="justJavaDisplay">$0</td>
+                  </tr>
+                  <tr>
+                    <td class="table_title"><b>Cafe au Lait</b></td>
+                    <td>
+                      House blended coffee infused into a smooth, steamed
+                      milk<br />
+                      <input
+                        type="radio"
+                        name="cafeAuLaitOption"
+                        id="cafeAuLaitSingle"
+                        value="Single"
+                        checked
+                      />
+                      <label for="Single"><b>Single $2.00</b></label>
+                      <input
+                        type="radio"
+                        name="cafeAuLaitOption"
+                        id="cafeAuLaitDouble"
+                        value="Double"
+                      />
+                      <label for="Double"><b>Double $3.00</b></label>
+                    </td>
+                    <td>
+                      <input
+                        type="number"
+                        class="coffeeInput"
+                        id="cafeAuLait"
+                        name="cafeAuLait"
+                        step="1"
+                        min="0"
+                      />
+                    </td>
+                    <td id="cafeAuLaitDisplay">$0</td>
+                  </tr>
+                  <tr>
+                    <td class="table_title"><b>Iced Cappucino</b></td>
+                    <td>
+                      Sweetened espresso blended with icy-cold milk and served
+                      in a chilled glass<br />
+                      <input
+                        type="radio"
+                        name="cappucinoOption"
+                        id="cappucinoSingle"
+                        value="Single"
+                        checked
+                      />
+                      <label for="Single"><b>Single $4.75</b></label>
+                      <input
+                        type="radio"
+                        name="cappucinoOption"
+                        id="cappucinoDouble"
+                        value="Double"
+                      />
+                      <label for="Double"><b>Double $5.75</b></label>
+                    </td>
+                    <td>
+                      <input
+                        type="number"
+                        class="coffeeInput"
+                        id="cappucino"
+                        name="cappucino"
+                        step="1"
+                        min="0"
+                      />
+                    </td>
+                    <td id="cappucinoDisplay">$0</td>
+                  </tr>
+                  <tr>
+                    <td class="table_title"></td>
+                    <td></td>
+                    <td>Total:</td>
+                    <td id="totalPriceDisplay">$0</td>
+                  </tr>
+                </table>
+                <input id="clear" type="reset" value="Clear" />
+                <input id="Submit" type="submit" value="Check Out" />
+              </form>
             </div>
           </div>
         </div>
