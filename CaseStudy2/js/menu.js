@@ -75,7 +75,8 @@ window.onload = function () {
 
   // Functions
   function calPrice(event, item, display) {
-    display.innerHTML = "$" + event.target.valueAsNumber * prices[item];
+    display.innerHTML =
+      "$" + (event.target.valueAsNumber * prices[item]).toFixed(2);
     var changes = (event.target.valueAsNumber - orders[item]) * prices[item];
     updateTotal(changes);
     orders[item] = event.target.valueAsNumber;
@@ -83,13 +84,13 @@ window.onload = function () {
 
   function updateTotal(changes) {
     totalPrice += changes;
-    totalPriceDisplay.innerHTML = "$" + totalPrice;
+    totalPriceDisplay.innerHTML = "$" + totalPrice.toFixed(2);
   }
 
   function priceChange(event, item, newPrice, display) {
     priceDiff = newPrice - prices[item];
     prices[item] = newPrice;
-    display.innerHTML = "$" + orders[item] * prices[item];
+    display.innerHTML = "$" + (orders[item] * prices[item]).toFixed(2);
     var changes = priceDiff * orders[item];
     updateTotal(changes);
   }
