@@ -34,20 +34,20 @@
                     </h2>
 
                     <!-- form to GET sales report -->
-                    <form action="./php/SalesReports.php" method="get">
-                        <input type="radio" name="report" id="byProducts" value="byProducts" required />
+                    <form action="./php/SalesReports.php" method="post" id="ReportForm">
+                        <input type="radio" name="SalesReport" id="product_id" value="product_id" required />
                         <label for="byProducts">Total dollar and quantity sales by products
                         </label>
                         <br />
-                        <input type="radio" name="report" id="byCategories" value="byCategories" required />
+                        <input type="radio" name="SalesReport" id="category" value="category" required />
                         <label for="byCategories">Total dollar and quantity sales by categories
                         </label>
-                        <br />
+                        <br /><br />
                         <label for="bestSeller">Popular option of best selling product:
                             <span id="bestSeller">________</span>
                         </label>
                         <br><br>
-                        <input type="submit" value="Generate report">
+                        <!-- <input type="submit" value="Generate report"> -->
                     </form>
 
                     <!-- php script -->
@@ -63,6 +63,23 @@
             <a href="mailto:zhixin@chow.com">zhixin@chow.com</a>
         </footer>
     </div>
+
+    <script>
+        // Get a reference to the form and the radio buttons
+        const form = document.getElementById("ReportForm");
+        const radio1 = document.getElementById("product_id");
+        const radio2 = document.getElementById("category");
+
+        // Add a click event listener to the radio buttons
+        radio1.addEventListener("click", function () {
+            form.submit(); // Submit the form when radio1 is clicked
+        });
+
+        radio2.addEventListener("click", function () {
+            form.submit(); // Submit the form when radio2 is clicked
+        });
+    </script>
+
 </body>
 
 </html>

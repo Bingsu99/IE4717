@@ -29,17 +29,17 @@
   if ($justJavaQty!=0){
     array_push($orderItems, ["name" => "Just Java",
                               "quantity" => $justJavaQty,
-                              "option" => $justJavaOpt]);
+                              "category" => $justJavaOpt]);
   }
   if ($cafeAuLaitQty!=0){
     array_push($orderItems, ["name" => "Cafe au Lait",
                               "quantity" => $cafeAuLaitQty,
-                              "option" => $cafeAuLaitOpt]);
+                              "category" => $cafeAuLaitOpt]);
   }
   if ($cappucinoQty!=0){
     array_push($orderItems, ["name" => "Iced Cappucino",
                               "quantity" => $cappucinoQty,
-                              "option" => $cappucinoOpt]);
+                              "category" => $cappucinoOpt]);
   }
   
 
@@ -52,7 +52,7 @@
 
   foreach ($orderItems as $value) {
     // Query for ProductID and Price
-    $query = "select product_id, price from products where products.product_name = '" . $value["name"] . "' and products.option = '" . $value["option"] . "'";
+    $query = "select product_id, price from products where products.product_name = '" . $value["name"] . "' and products.category = '" . $value["category"] . "'";
     echo $query . "<br/>";
     $result = $db->query($query);
     $var1 = $result->fetch_assoc();

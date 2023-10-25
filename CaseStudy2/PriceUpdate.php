@@ -38,6 +38,7 @@
           <nav>
             <ul>
               <li><a href="PriceUpdate.php">Product Price Update</a></li>
+              <li><a href="SalesReports.php">Daily Sales Reports</a></li>
             </ul>
           </nav>
         </div>
