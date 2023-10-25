@@ -38,3 +38,12 @@ tr:nth-of-type(odd) {
   width: 60px;
   text-align: center;
 }
+
+.priceinput {
+  width: 50px;
+}
+
+.validation_message {
+  font-size: small;
+  margin-left: 10px;
+}
