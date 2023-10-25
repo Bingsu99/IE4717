@@ -5,10 +5,29 @@ window.onload = function () {
     cafeAuLait: 0,
     cappucino: 0,
   };
+
   var prices = {
-    justJava: 2,
-    cafeAuLait: 2,
-    cappucino: 4.75,
+    justJava: parseFloat(document.getElementById("justJavaPrice").innerHTML),
+    cafeAuLait: parseFloat(
+      document.getElementById("cafeAuLait1Price").innerHTML
+    ),
+    cappucino: parseFloat(document.getElementById("cappucino1Price").innerHTML),
+  };
+
+  var dbprices = {
+    justJava: parseFloat(document.getElementById("justJavaPrice").innerHTML),
+    cafeAuLait1: parseFloat(
+      document.getElementById("cafeAuLait1Price").innerHTML
+    ),
+    cafeAuLait2: parseFloat(
+      document.getElementById("cafeAuLait2Price").innerHTML
+    ),
+    cappucino1: parseFloat(
+      document.getElementById("cappucino1Price").innerHTML
+    ),
+    cappucino2: parseFloat(
+      document.getElementById("cappucino2Price").innerHTML
+    ),
   };
 
   // Quantity Inputs
@@ -42,16 +61,16 @@ window.onload = function () {
   });
 
   cafeAuLaitSingle.addEventListener("click", (evt) => {
-    priceChange(evt, "cafeAuLait", 2, cafeAuLaitDisplay);
+    priceChange(evt, "cafeAuLait", dbprices["cafeAuLait1"], cafeAuLaitDisplay);
   });
   cafeAuLaitDouble.addEventListener("click", (evt) => {
-    priceChange(evt, "cafeAuLait", 3, cafeAuLaitDisplay);
+    priceChange(evt, "cafeAuLait", dbprices["cafeAuLait2"], cafeAuLaitDisplay);
   });
   cappucinoSingle.addEventListener("click", (evt) => {
-    priceChange(evt, "cappucino", 4.75, cappucinoDisplay);
+    priceChange(evt, "cappucino", dbprices["cappucino1"], cappucinoDisplay);
   });
   cappucinoDouble.addEventListener("click", (evt) => {
-    priceChange(evt, "cappucino", 5.75, cappucinoDisplay);
+    priceChange(evt, "cappucino", dbprices["cappucino2"], cappucinoDisplay);
   });
 
   // Functions
