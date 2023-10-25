@@ -37,7 +37,7 @@
         <div id="leftcolumn">
           <nav>
             <ul>
-              <li><a href="index.html">Product Price Update</a></li>
+              <li><a href="PriceUpdate.php">Product Price Update</a></li>
             </ul>
           </nav>
         </div>
