@@ -1,22 +1,4 @@
 <?php
-  // Data Checking
-  // var_dump($_POST) . "<br/>";
-
-  // echo "justJava" . ": ";
-  // echo $_POST["justJava"] . "<br/>";
-
-  // echo "cafeAuLaitOption" . ": ";
-  // echo $_POST["cafeAuLaitOption"] . "<br/>";
-
-  // echo "cafeAuLait" . ": ";
-  // echo $_POST["cafeAuLait"] . "<br/>";
-
-  // echo "cappucinoOption" . ": ";
-  // echo $_POST["cappucinoOption"] . "<br/>";
-
-  // echo "cappucino" . ": ";
-  // echo $_POST["cappucino"] . "<br/>";
-
   // Data Saving
   $justJavaQty = intval($_POST["justJava"]);
   $cafeAuLaitQty = intval($_POST["cafeAuLait"]);
@@ -53,11 +35,11 @@
   foreach ($orderItems as $value) {
     // Query for ProductID and Price
     $query = "select product_id, price from products where products.product_name = '" . $value["name"] . "' and products.category = '" . $value["category"] . "'";
-    echo $query . "<br/>";
+    // echo $query . "<br/>";
     $result = $db->query($query);
     $var1 = $result->fetch_assoc();
-    echo "ProductID: " . $var1["product_id"] . "<br/>";
-    echo "ProductPrice: " . $var1["price"] . "<br/><br/>";
+    // echo "ProductID: " . $var1["product_id"] . "<br/>";
+    // echo "ProductPrice: " . $var1["price"] . "<br/><br/>";
 
     // Adding to Order Table
     $totalCost = $var1['price'] * $value['quantity'];
@@ -65,12 +47,21 @@
     $result = $db->query($query);
 
     // Checking if order is added into table
-    if ($result) {
-      echo "Added Order for 1 item <br/><br/>";
-    }else {
-      echo "An error has occurred.  The item was not added.";
-    }
+    // if ($result) {
+    //   echo "Added Order for 1 item <br/><br/>";
+    // }else {
+    //   echo "An error has occurred.  The item was not added.";
+    // }
+    
+    echo '<script type="text/javascript">if (confirm("Order Successfully Placed") == true) {
+      window.location.href = "../menu.php";
+    } else {
+      window.location.href = "../menu.php";
+    };</script>';
+    
   }
 
+  
 
+  
 ?>
