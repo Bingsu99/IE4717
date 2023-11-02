@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS yunan;
 create database yunan;
 use yunan;
 
@@ -31,10 +32,13 @@ CREATE TABLE Orders (
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
+
+-- ADD ITEM NAME
 -- Create Items table
 CREATE TABLE Items (
     ItemID INT PRIMARY KEY,
     MenuID INT,
+    ItemName VARCHAR(50),
     ItemDescription TEXT,
     ItemPrice DECIMAL(10, 2),
     ItemImage LONGBLOB,
@@ -58,13 +62,16 @@ CREATE TABLE OrderItems (
 -- $basePath = 'C:/xampp/htdocs/IE4717/IE4717/FinalProject';
 
 SET @tempData = LOAD_FILE('C:\\xampp\\htdocs\\IE4717\\IE4717\\FinalProject\\assets\\temp.jpg');
+SET @tempData2 = LOAD_FILE('C:\\xampp\\htdocs\\IE4717\\IE4717\\FinalProject\\assets\\temp2.jpg');
+SET @tempData3 = LOAD_FILE('C:\\xampp\\htdocs\\IE4717\\IE4717\\FinalProject\\assets\\temp3.jpg');
+
 
 -- Inserting fake data into Menus table
 INSERT INTO Menus (MenuID, MenuName, MenuDescription, MenuImage)
 VALUES
 (1, 'French', 'French Description', @tempData),
-(2, 'Chinese', 'Chinese Description', @tempData),
-(3, 'Korean', 'Korean Description', @tempData);
+(2, 'Chinese', 'Chinese Description', @tempData2),
+(3, 'Korean', 'Korean Description', @tempData3);
 
 -- SET @salmonCanapesImgData = LOAD_FILE('../assets/SalmonCanapes.jpg');
 -- SET @cheeseTartImgData = LOAD_FILE('../assets/CheeseTart.jpg');
@@ -75,12 +82,12 @@ VALUES
 -- SET @sundaeImgData = LOAD_FILE('../assets/Sundae.jpg');
 
 -- Inserting fake data into Items table
-INSERT INTO Items (ItemID, MenuID, ItemDescription, ItemPrice, ItemImage)
+INSERT INTO Items (ItemID, MenuID, ItemName, ItemDescription, ItemPrice, ItemImage)
 VALUES
-(1, 1, 'Smoked Salmon Canapes', 9.99, @tempData),
-(2, 1, 'Alsatian Cheese Tart', 7.50, @tempData),
-(3, 1, 'Lyonnaise Salad', 10.25, @tempData),
-(4, 2, 'Bok Choy', 8.75, @tempData),
-(5, 2, 'Steam Fish', 6.99, @tempData),
-(6, 3, 'Toppokki', 19.99, @tempData),
-(7, 3, 'Sundae', 12.50, @tempData);
+(1, 1, 'Smoked Salmon Canapes', 'Smoked Salmon Canapes', 9.99, @tempData),
+(2, 1, 'Alsatian Cheese Tart', 'Alsatian Cheese Tart', 7.50, @tempData),
+(3, 1, 'Lyonnaise Salad', 'Lyonnaise Salad', 10.25, @tempData),
+(4, 2, 'Bok Choy', 'Bok Choy', 8.75, @tempData),
+(5, 2, 'Steam Fish', 'Steam Fish', 6.99, @tempData),
+(6, 3, 'Toppokki', 'Toppokki', 19.99, @tempData),
+(7, 3, 'Sundae', 'Sundae', 12.50, @tempData);

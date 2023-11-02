@@ -1,0 +1,40 @@
+.menu-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.menuBox {
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+  max-width: 300px;
+  height: auto;
+  padding: 20px;
+  margin: 1%;
+  border: 1px solid black;
+}
+
+hr {
+  width: 100%;
+  border-top: 1px solid #000;
+}
+
+h2 {
+  text-align: center;
+}
+
+.menuImage {
+  width: 100%; /* Set the width to 100% to make it responsive */
+  height: 15em; /* Set a fixed height */
+  min-width: 250px;
+  object-fit: cover; /* Maintain aspect ratio */
+  margin-bottom: 20px;
+}
+
+.orderBtn {
+  border-radius: 0px;
+  border: 0px;
+  padding: 10px 60px 10px 60px;
+  margin: auto;
+}
