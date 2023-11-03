@@ -1,0 +1,35 @@
+/* .items-container {
+  display: block;
+} */
+
+.items-table {
+  width: 80%;
+  margin: auto;
+}
+
+.itemImage {
+  max-width: 200px;
+  height: auto;
+}
+
+.itemDescCol {
+  display: inline-flex;
+}
+
+.itemDesc {
+  margin-left: 15px;
+}
+
+.itemQuantity {
+  width: 40px;
+  height: 40px;
+  font-size: x-large;
+  padding-left: 10px;
+  text-align: center;
+}
+
+.totalPriceDisplay {
+  width: 80%;
+  margin: auto;
+  text-align: right;
+}

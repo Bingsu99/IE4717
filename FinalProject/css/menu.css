@@ -34,7 +34,14 @@ h2 {
 
 .orderBtn {
   border-radius: 0px;
-  border: 0px;
   padding: 10px 60px 10px 60px;
   margin: auto;
+}
+
+.orderBtn:hover {
+  cursor: pointer; /* Change cursor on hover to pointer */
+}
+
+.orderForm {
+  text-align: center;
 }

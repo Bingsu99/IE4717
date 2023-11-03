@@ -74,7 +74,15 @@
                   <hr/>
                   $$menuCost
                   <p>Description</p>
-                  <input type='button' class='orderBtn' value='Order Now'>
+                  <form
+                    name='menuForm'
+                    action='./customise.php'
+                    method='get'
+                    class='orderForm'
+                  >
+                  <input type='hidden' name='menu' value=$menuID>
+                  <input type='submit' class='orderBtn' value='Order Now'>
+                  </form>
                 </div>";
         }
         $dbcnx->close()
