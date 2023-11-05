@@ -49,21 +49,6 @@
       </div>
     </nav>
     <?php
-      if(isset($_GET['menu'])){
-        $menuID = $_GET['menu'];
-        include "./php/dbconnect.php";
-        $menuQuery = "select * from Items where Items.MenuID = $menuID";
-        $menuQueryResult = $dbcnx->query($menuQuery);
-        $imageType = 'image/jpeg';
-        while($itemData = $menuQueryResult->fetch_assoc()) {
-          continue;
-        }
-        
-      }else{
-        echo "No Menu Selected";
-      }
-    ?>
-    <?php
       $to = "f32ee@localhost";
       $subject = "Test Email";
       $message = "This is a test email message.";

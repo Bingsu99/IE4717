@@ -1,0 +1,25 @@
+.content-container {
+  display: inline;
+}
+
+.order-table {
+  border: 1px solid black;
+  float: left;
+  margin-left: 10%;
+  padding: 10px;
+}
+
+.price {
+  padding-left: 100px;
+}
+
+.details {
+  border: 1px solid black;
+  float: right;
+  margin-right: 10%;
+  padding: 10px;
+}
+
+.twoCol {
+  width: 97.5%;
+}
