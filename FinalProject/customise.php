@@ -49,7 +49,7 @@
       </div>
     </nav>
     <form name='itemsForm'
-          action='./show_post.php'
+          action='./delivery.php'
           method='get'>
       <table class="items-table" id="itemsContainer">
         <tr>
