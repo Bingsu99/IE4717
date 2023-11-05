@@ -14,7 +14,6 @@
   <body>
     <?php
       session_start();
-
       include "./php/dbconnect.php";
       $sql = "SELECT ItemID, ItemPrice, ItemName FROM items";
       $result  = $dbcnx->query($sql);
@@ -41,7 +40,6 @@
                                 );
           };
       }
-      
       $_SESSION['cart'] = $itemQuantities;
     ?>
 
