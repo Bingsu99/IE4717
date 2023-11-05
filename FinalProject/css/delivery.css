@@ -1,12 +1,13 @@
 .content-container {
-  display: inline;
+  text-align: center;
 }
 
 .order-table {
   border: 1px solid black;
-  float: left;
-  margin-left: 10%;
   padding: 10px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 50px;
 }
 
 .price {
@@ -15,9 +16,10 @@
 
 .details {
   border: 1px solid black;
-  float: right;
-  margin-right: 10%;
   padding: 10px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 50px;
 }
 
 .twoCol {
