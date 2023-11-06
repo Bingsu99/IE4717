@@ -30,9 +30,10 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: #333; */
+  background-color: #333;
   /* Background color for the navbar */
-  color: #fff;
+  color: #ede7db;
+  padding: .5rem 3.2rem;
 }
 
 .left-menu {
@@ -40,16 +41,16 @@ p {
 }
 #logo {
   text-align: center;
-  padding: 10px;
+  /* padding: 10px; */
 }
 #rightnav {
   text-align: right;
   padding: 10px;
 }
 .navbar a {
-  color: #232323;
   text-decoration: none;
   margin: 0 10px;
+  color: #ede7db;
 }
 /*  */
 /* ---------------------------- hamburger menu ---------------------------- */
@@ -61,10 +62,11 @@ p {
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
+  background-color: #232323;
 }
 #menuToggle a {
   text-decoration: none;
-  color: #232323;
+  color: #ede7db;
   transition: color 0.3s ease;
 }
 #menuToggle a:hover {
@@ -88,7 +90,7 @@ p {
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  background: #232323;
+  background: #ede7db;
   border-radius: 5px;
   z-index: 1;
   transform-origin: 4px 0px;
@@ -107,7 +109,7 @@ p {
 #menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
+  background: #ede7db;
 }
 /* bottom line */
 #menuToggle input:checked ~ span:nth-last-child(2) {
@@ -137,6 +139,7 @@ p {
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  background-color: #232323;
 }
 #menu li {
   padding: 10px 0;
@@ -145,7 +148,6 @@ p {
 #menuToggle input:checked ~ ul {
   transform: none;
 }
-
 
 /*  */
 /* ---------------------------- general links ---------------------------- */
@@ -156,9 +158,3 @@ p {
 .more a {
   color: #232323;
 }
-
-
-
-
-
-

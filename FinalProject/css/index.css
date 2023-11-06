@@ -2,10 +2,12 @@
 /* ---------------------------- banner ---------------------------- */
 #banner {
   width: auto;
-  height: 600px;
-  background-color: gray;
-  text-align: center;
+  height: auto;
 }
+#banner img {
+  width: 100%;
+}
+
 
 /*  */
 /* ---------------------------- specialise ----------------------------*/
@@ -105,3 +107,5 @@
 .centerText p {
   margin-bottom: 0;
 }
+
+/* footer */
