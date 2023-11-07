@@ -51,15 +51,10 @@
         </div>
     </nav>
 
-    <h2>Menu</h2>
+    <h2>Menus</h2>
+    <p class="menus-description">Our catering services specialize in tailoring diverse menus to perfectly match any occasion and satisfy varied tastes. From corporate events to intimate gatherings, our culinary experts skillfully craft a wide array of delicacies, ensuring a flavorful experience that uniquely complements each special moment.</p>
     <div class="menu-container">
-<<<<<<< HEAD
-
-
-        <?php 
-=======
       <?php 
->>>>>>> afee9aadccc8f9208735e3473963b7278f485503
         include "./php/dbconnect.php";
         $query = 'select * from menus';
         $result = $dbcnx->query($query);
@@ -96,6 +91,58 @@
         $dbcnx->close()
       ?>
     </div>
+    <footer class="container">
+        <div class="footer-column">
+            <h4>Account</h4>
+            <ul>
+                <li><a href="#"> Manage Account</a></li>
+                <li><a href="#">Orders</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Catering</h4>
+            <ul>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">What's New</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Media Post</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Term & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Reviews</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Newsletter</h4>
+            <form action="" method="post" style="color: #fffcf8c0; font-size: 12px;">
+                <label for="email" style="color: #fffcf8c0;">Email*</label><br>
+                <input type="email" name="email" id="email" placeholder="Email">
+                <p style="color: #fffcf8c0; margin-top: 0%; margin-bottom: .5rem;">Subscribe for the latest menu
+                    launches and updates</p>
+
+                <input type="checkbox" name="consent" id="consent">
+                <label for="consent">I consent to recieve marketing communications from Yunnan Catering</label>
+                <br><br>
+
+                <input type="submit" value="Submit" class="orderBtn">
+            </form>
+        </div>
+        <div class="footer-column">
+            <ul class="itemsFlex logo">
+                <li><a href="#"><img src="./images/Facebook.png" alt="Facebook logo" height="40"></a></li>
+                <li><a href="#"><img src="./images/Instagram.png" alt="Facebook logo" height="40"></a></li>
+                <li><img src="./images/halal logo.png" alt="Facebook logo" height="40"></li>
+            </ul>
+        </div>
+
+    </footer>
 </body>
 
 </html>

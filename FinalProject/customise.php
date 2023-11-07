@@ -97,12 +97,65 @@
             <td><b>$<span id="totalPrice">0</span></b></td>
         </tr>
         <tr>
-            <td></td>
-            <td><input type="button" value="Back" class="orderBtn"></td>
-            <td><input type="submit" value="Next" class="orderBtn"></td>
+            <td colspan="3" style="text-align: right;" >
+            <button type='button' class='orderBtn'><a href='menu.php' class='no-style'>Back</a></button>
+            <input type="submit" value="Next" class="orderBtn">
+            </td>
         </tr>
       </table>
     </form>
+    <footer class="container">
+        <div class="footer-column">
+            <h4>Account</h4>
+            <ul>
+                <li><a href="#"> Manage Account</a></li>
+                <li><a href="#">Orders</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Catering</h4>
+            <ul>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">What's New</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Media Post</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Term & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Reviews</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Newsletter</h4>
+            <form action="" method="post" style="color: #fffcf8c0; font-size: 12px;">
+                <label for="email" style="color: #fffcf8c0;">Email*</label><br>
+                <input type="email" name="email" id="email" placeholder="Email">
+                <p style="color: #fffcf8c0; margin-top: 0%; margin-bottom: .5rem;">Subscribe for the latest menu
+                    launches and updates</p>
+
+                <input type="checkbox" name="consent" id="consent">
+                <label for="consent">I consent to recieve marketing communications from Yunnan Catering</label>
+                <br><br>
+
+                <input type="submit" value="Submit" class="orderBtn">
+            </form>
+        </div>
+        <div class="footer-column">
+            <ul class="itemsFlex logo">
+                <li><a href="#"><img src="./images/Facebook.png" alt="Facebook logo" height="40"></a></li>
+                <li><a href="#"><img src="./images/Instagram.png" alt="Facebook logo" height="40"></a></li>
+                <li><img src="./images/halal logo.png" alt="Facebook logo" height="40"></li>
+            </ul>
+        </div>
+
+    </footer>
   </body>
 </html>
 

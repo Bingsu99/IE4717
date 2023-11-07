@@ -94,16 +94,64 @@
                   <img src='./assets/deliverybear.gif' class='delivery-image'>
                   <span>YOUR ORDER WAS COMPLETED SUCESSFULLY</span>
                   <span>A EMAIL RECEIPT INCLUDING THE DETAILS ABOUT YOUR ORDER HAS BEEN SENT TO THE EMAIL PROVIDED</span>
-                  <button type='button' style='margin-top: 10px;'><a href='index.html' class='no-style'>Continue Browsing</a></button>
+                  <button type='button' style='margin-top: 10px;' class='orderBtn'><a href='index.php' class='no-style'>Continue Browsing</a></button>
                 </div>";
       } else {
           echo "Email sending failed";
       }
     ?>
+    <footer class="container">
+        <div class="footer-column">
+            <h4>Account</h4>
+            <ul>
+                <li><a href="#"> Manage Account</a></li>
+                <li><a href="#">Orders</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Catering</h4>
+            <ul>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">What's New</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Media Post</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Term & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Reviews</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Newsletter</h4>
+            <form action="" method="post" style="color: #fffcf8c0; font-size: 12px;">
+                <label for="email" style="color: #fffcf8c0;">Email*</label><br>
+                <input type="email" name="email" id="email" placeholder="Email">
+                <p style="color: #fffcf8c0; margin-top: 0%; margin-bottom: .5rem;">Subscribe for the latest menu
+                    launches and updates</p>
 
-    
-    
-        
+                <input type="checkbox" name="consent" id="consent">
+                <label for="consent">I consent to recieve marketing communications from Yunnan Catering</label>
+                <br><br>
+
+                <input type="submit" value="Submit" class="orderBtn">
+            </form>
+        </div>
+        <div class="footer-column">
+            <ul class="itemsFlex logo">
+                <li><a href="#"><img src="./images/Facebook.png" alt="Facebook logo" height="40"></a></li>
+                <li><a href="#"><img src="./images/Instagram.png" alt="Facebook logo" height="40"></a></li>
+                <li><img src="./images/halal logo.png" alt="Facebook logo" height="40"></li>
+            </ul>
+        </div>
+
+    </footer>
   </body>
 </html>
 
