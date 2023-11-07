@@ -99,7 +99,7 @@ SET @vegetarianDish5 = LOAD_FILE(CONCAT(@basePath, 'Vegetarian/VegetarianFriedRi
 -- Inserting fake data into Menus table
 INSERT INTO Menus (MenuID, MenuName, MenuDescription, MenuImage)
 VALUES
-(1, 'Asian', 'Asian Description', @vegetarianDish1),
+(1, 'Asian', 'Asian Description', @asianDelightsMenu),
 (2, 'Christmas', 'Christmas Description', @christmasMenu),
 (3, 'French', 'French Description', @frenchMenu),
 (4, 'Spring', 'Spring Description', @springMenu),
