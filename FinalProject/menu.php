@@ -1,57 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>Document</title>
     <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/menu.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <nav class="navbar container">
-      <!-- hamburger -->
-      <div id="menuToggle" class="left-menu">
         <!-- hamburger -->
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
+        <div id="menuToggle" class="left-menu">
+            <!-- hamburger -->
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
 
-        <!-- menu inside hamburger -->
-        <ul id="menu">
-          <a href="#">
-            <li>Home</li>
-          </a>
-          <a href="#">
-            <li>About</li>
-          </a>
-          <a href="#">
-            <li>Info</li>
-          </a>
-          <a href="#">
-            <li>Contact</li>
-          </a>
-          <a href="https://erikterwan.com/" target="_blank">
-            <li>Show me more</li>
-          </a>
-        </ul>
-      </div>
-      <!-- logo -->
-      <div class="logo">
-        <img src="your-logo.png" alt="Logo" />
-      </div>
+            <!-- menu inside hamburger -->
+            <ul id="menu">
+                <a href="./index.php">
+                    <li>Home</li>
+                </a>
+                <a href="#">
+                    <li>About</li>
+                </a>
+                <a href="#">
+                    <li>Info</li>
+                </a>
+                <a href="#">
+                    <li>Contact</li>
+                </a>
+                <a href="#" target="_blank">
+                    <li>Show me more</li>
+                </a>
+            </ul>
+        </div>
+        <!-- logo -->
+        <div class="logo">
+            <a href="./index.php">
+                <img src="images/logo.png" alt="Logo">
+            </a>
+        </div>
 
-      <!-- login & cart -->
-      <div id="rightnav">
-        <a href="#"> Login/Register </a>
-        <a href="#"> Cart </a>
-      </div>
+        <!-- login & cart -->
+        <div id="rightnav">
+            <a href="#"> Login/Register </a>
+            <a href="#"> Cart </a>
+        </div>
     </nav>
+
     <h2>Menu</h2>
     <div class="menu-container">
-      
 
-      <?php 
+
+        <?php 
         include "./php/dbconnect.php";
         $query = 'select * from menus';
         $result = $dbcnx->query($query);
@@ -88,6 +92,6 @@
         $dbcnx->close()
       ?>
     </div>
-  </body>
-</html>
+</body>
 
+</html>

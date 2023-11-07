@@ -8,24 +8,28 @@
   width: 100%;
 }
 
-
 /*  */
 /* ---------------------------- specialise ----------------------------*/
 #whatWeDo {
+  padding-top: 5rem;
   display: flex;
   justify-content: space-between;
 }
 
 #whatWeDo div {
-  flex: 1; /* Make the divs take equal space */
-  padding: 20px;
-  border: 1px solid #ccc;
+  flex: 1;
   text-align: center;
 }
 #whatWeDo_img {
   width: auto;
-  height: 300px;
-  background-color: gray;
+  height: 380px;
+  /* background-color: gray; */
+}
+#whatWeDo_img img {
+  height: 100%;
+}
+#whatWeDo_p {
+  padding: 0.5rem 2rem;
 }
 
 /*  */
@@ -33,9 +37,13 @@
 .itemsFlex {
   display: flex;
 }
+#topPick{
+  padding: 1.5rem 9.5rem;
+}
 .package {
   margin: auto;
-  background-color: gray;
+  min-height: 310px;
+  background-color: #FFFCF8;
   padding: 2rem;
 }
 .package h3,
@@ -63,23 +71,17 @@
 .totalPrice p {
   margin-top: 0;
 }
-.totalPrice button {
-  width: 80%;
-  height: 50px;
-  border: none;
-  font-size: 16px;
-}
 
 /*  */
-/* about us */
+/* ---------------------------- about us ---------------------------- */
 .sideImage {
   flex: 3;
-  margin: 1.2rem 2rem;
+  /* margin: 1.2rem 2rem; */
 }
 .about_img {
   height: 250px;
   margin: 20px;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
 }
 .centerText {
   flex: 5;
@@ -88,7 +90,7 @@
   text-align: center;
   position: relative;
   width: 100%;
-  background-color: gray;
+  /* background-color: gray; */
 }
 .centered {
   position: absolute;
@@ -106,6 +108,13 @@
 .centerText h3,
 .centerText p {
   margin-bottom: 0;
+}
+
+#OurStory {
+  margin: 1rem;
+  border: 10px #232323 solid;
+  background-color: #FFFCF8;
+  box-shadow: 2px 2px 15px gray;
 }
 
 /* footer */

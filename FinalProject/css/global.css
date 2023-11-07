@@ -1,28 +1,58 @@
 body {
   margin: 0;
   padding: 0;
-  background: #cdcdcd;
+  /* background: #cdcdcd; */
   color: #232323;
 }
 h1 {
   font-size: 64px;
   text-align: center;
+  color: #deac7f;
 }
 h2 {
+  color: #a77549;
   font-size: 36px;
 }
 h3 {
+  color: #232323;
   font-size: 24px;
 }
 p {
+  color: #232323;
   font-size: 16px;
 }
 .container {
-  padding: 1.5rem 3.2rem;
+  padding: 1.5rem 6rem;
 }
 .divider {
   border-top: 1px solid #232323; /* Change the color and thickness as needed */
   margin: 5px 0; /* Adjust margin to control spacing */
+}
+footer {
+  background-color: #232323;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+h4 {
+  color: #fffcf8;
+  font-size: 16px;
+  font-weight: bold;
+}
+.footer-column {
+  flex: 1;
+}
+.footer-column ul {
+  list-style: none;
+  padding-left: 0px;
+}
+.footer-column ul li {
+  padding: 5px 0;
+}
+.footer-column ul li a {
+  text-decoration: none;
+  color: #fffcf8c0;
+  padding: 0.4rem;
 }
 
 /* ---------------------------- NAVBAR ---------------------------- */
@@ -30,10 +60,10 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: #232323;
   /* Background color for the navbar */
   color: #ede7db;
-  padding: .5rem 3.2rem;
+  padding: 0.5rem 6rem;
 }
 
 .left-menu {
@@ -70,7 +100,7 @@ p {
   transition: color 0.3s ease;
 }
 #menuToggle a:hover {
-  color: tomato;
+  color: #DEAC7F;
 }
 #menuToggle input {
   display: block;
@@ -126,13 +156,13 @@ p {
  */
 #menu {
   position: fixed;
-  width: 300px;
+  width: 200px;
   height: 100%;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
+  margin: -100px 0 0 -6rem;
+  padding: 6rem;
   padding-top: 125px;
 
-  background: #ededed;
+  background: #FFFCF8;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
@@ -157,4 +187,24 @@ p {
 }
 .more a {
   color: #232323;
+}
+
+
+/*  */
+/* ---------------------------- Btn ---------------------------- */
+
+.orderBtn {
+  border-radius: 0px;
+  padding: 10px 60px 10px 60px;
+  margin: auto;
+  border: none;
+  font-weight: 300;
+  background-color: #DEAC7F;
+}
+.orderBtn:hover {
+  cursor: pointer; /* Change cursor on hover to pointer */
+  border: none;
+}
+.orderForm {
+  text-align: center;
 }

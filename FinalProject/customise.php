@@ -10,44 +10,47 @@
 
   <body>
     <nav class="navbar container">
-      <!-- hamburger -->
-      <div id="menuToggle" class="left-menu">
         <!-- hamburger -->
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
+        <div id="menuToggle" class="left-menu">
+            <!-- hamburger -->
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
 
-        <!-- menu inside hamburger -->
-        <ul id="menu">
-          <a href="#">
-            <li>Home</li>
-          </a>
-          <a href="#">
-            <li>About</li>
-          </a>
-          <a href="#">
-            <li>Info</li>
-          </a>
-          <a href="#">
-            <li>Contact</li>
-          </a>
-          <a href="https://erikterwan.com/" target="_blank">
-            <li>Show me more</li>
-          </a>
-        </ul>
-      </div>
-      <!-- logo -->
-      <div class="logo">
-        <img src="your-logo.png" alt="Logo" />
-      </div>
+            <!-- menu inside hamburger -->
+            <ul id="menu">
+                <a href="./menu.php">
+                    <li>Menu</li>
+                </a>
+                <a href="#">
+                    <li>About</li>
+                </a>
+                <a href="#">
+                    <li>Info</li>
+                </a>
+                <a href="#">
+                    <li>Contact</li>
+                </a>
+                <a href="#" target="_blank">
+                    <li>Show me more</li>
+                </a>
+            </ul>
+        </div>
+        <!-- logo -->
+        <div class="logo">
+            <a href="./index.php">
+                <img src="images/logo.png" alt="Logo">
+            </a>
+        </div>
 
-      <!-- login & cart -->
-      <div id="rightnav">
-        <a href="#"> Login/Register </a>
-        <a href="#"> Cart </a>
-      </div>
+        <!-- login & cart -->
+        <div id="rightnav">
+            <a href="#"> Login/Register </a>
+            <a href="#"> Cart </a>
+        </div>
     </nav>
+    
     <form name='itemsForm'
           action='./delivery.php'
           method='get'>
@@ -95,8 +98,8 @@
         </tr>
         <tr>
             <td></td>
-            <td><input type="button" value="Back"></td>
-            <td><input type="submit" value="Next"></td>
+            <td><input type="button" value="Back" class="orderBtn"></td>
+            <td><input type="submit" value="Next" class="orderBtn"></td>
         </tr>
       </table>
     </form>
