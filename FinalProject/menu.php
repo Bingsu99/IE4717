@@ -53,9 +53,13 @@
 
     <h2>Menu</h2>
     <div class="menu-container">
+<<<<<<< HEAD
 
 
         <?php 
+=======
+      <?php 
+>>>>>>> afee9aadccc8f9208735e3473963b7278f485503
         include "./php/dbconnect.php";
         $query = 'select * from menus';
         $result = $dbcnx->query($query);
