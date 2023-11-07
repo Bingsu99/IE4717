@@ -49,8 +49,6 @@
     </nav>
     <h2>Menu</h2>
     <div class="menu-container">
-      
-
       <?php 
         include "./php/dbconnect.php";
         $query = 'select * from menus';

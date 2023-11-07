@@ -88,7 +88,7 @@
           echo "<div class='confirmation-content'>
                   <span>WE MUST SAY.</span>
                   <span>YOU'VE A GREAT CHOICE OF TASTE!</span>
-                  <img src='./assets/deliverybear.png' class='delivery-image'>
+                  <img src='./assets/deliverybear.gif' class='delivery-image'>
                   <span>YOUR ORDER WAS COMPLETED SUCESSFULLY</span>
                   <span>A EMAIL RECEIPT INCLUDING THE DETAILS ABOUT YOUR ORDER HAS BEEN SENT TO THE EMAIL PROVIDED</span>
                   <button type='button' style='margin-top: 10px;'><a href='index.html' class='no-style'>Continue Browsing</a></button>
