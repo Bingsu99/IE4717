@@ -45,11 +45,10 @@
             </a>
         </div>
 
-        <!-- login & cart -->
         <div id="rightnav">
-            <a href="#"> Login/Register </a>
-            <a href="#"> Cart </a>
+            <!-- <a href="#"> Cart </a> -->
         </div>
+
     </nav>
     <?php
         include "./php/dbconnect.php";
@@ -78,7 +77,7 @@
                             "Unit" => $row['unit'],
                             "Postal" => $row['postalCode']
                         );
-                        $_SESSION['deliveryDetails'] = $DeliveryDetails;
+                        $_SESSION['deliveryDetails'] = $userDetails;
                         $_SESSION['login'] = true;
                         header("Location: index.php");
                     }
@@ -136,8 +135,6 @@
                         </div>";
                     }
                 }
-
-
             };
         }else{
             echo "<div class='loginRegister'>

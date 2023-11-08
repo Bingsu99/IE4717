@@ -29,7 +29,7 @@
       }
     ?>
 
-    <nav class="navbar container">
+<nav class="navbar container">
         <!-- hamburger -->
         <div id="menuToggle" class="left-menu">
             <!-- hamburger -->
@@ -66,8 +66,20 @@
 
         <!-- login & cart -->
         <div id="rightnav">
-            <a href="#"> Login/Register </a>
-            <a href="#"> Cart </a>
+            <?php
+                if (session_status() == PHP_SESSION_NONE) {
+                    session_start();
+                }
+                if(isset($_SESSION['login'])){
+                    if ($_SESSION['login'] == True){
+                        echo "<a href='./php/logout.php'> Logout </a>";
+                    }
+                }else{
+                    echo "<a href='./login.php'> Login/Register </a>";
+                };
+            ?>
+            
+            <!-- <a href="#"> Cart </a> -->
         </div>
     </nav>
 
@@ -116,28 +128,45 @@
                 <h3>Personal Information</h3>
                 <table>
                     <tr>
-                        <td><input type="text" name="firstname" placeholder="First Name" required></td>
-                        <td><input type="text" name="lastname" placeholder="Last Name" required></td>
+                        
+                        <td><input type="text" name="firstname" placeholder="First Name" 
+                                <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['firstName']. '\'' : "";?>
+                            required></td>
+                        <td><input type="text" name="lastname" placeholder="Last Name"
+                                <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['lastName']. '\'' : "";?>
+                            required></td>
                     </tr>
                     <tr>
-                        <td colspan='2'><input type="email" name="email" placeholder="Email" class='twoCol' required>
+                        <td colspan='2'><input type="email" name="email" placeholder="Email" class='twoCol' 
+                                        <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['email']. '\'' : "";?>
+                                        required>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan='2'><input type="tel" name="phone" pattern="[0-9]{8}" placeholder="Contact Number"
-                                class='twoCol' required></td>
+                        <td colspan='2'><input type="tel" name="phone" pattern="[0-9]{8}" placeholder="Contact Number" class='twoCol' 
+                                        <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Phone']. '\'' : "";?>
+                                        required>
+                        </td>
                     </tr>
                 </table>
 
                 <h3>Delivery Address</h3>
                 <table>
                     <tr>
-                        <td colspan='2'><input type="text" name="address" placeholder="Address" class='twoCol' required>
+                        <td colspan='2'><input type="text" name="address" placeholder="Address" class='twoCol' 
+                                        <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Address']. '\'' : "";?>
+                                        required>
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="unit" placeholder="Unit" required></td>
-                        <td><input type="text" name="postal" placeholder="Postal Code" required></td>
+                        <td><input type="text" name="unit" placeholder="Unit" 
+                            <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Unit']. '\'' : "";?>
+                            required>
+                        </td>
+                        <td><input type="text" name="postal" placeholder="Postal Code" 
+                            <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Postal']. '\'' : "";?>
+                            required>
+                        </td>
                     </tr>
                 </table>
                 <h3>Delivery Option</h3>

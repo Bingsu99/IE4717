@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <nav class="navbar container">
+<nav class="navbar container">
         <!-- hamburger -->
         <div id="menuToggle" class="left-menu">
             <!-- hamburger -->
@@ -20,8 +20,8 @@
 
             <!-- menu inside hamburger -->
             <ul id="menu">
-                <a href="./index.php">
-                    <li>Home</li>
+                <a href="./menu.php">
+                    <li>Menu</li>
                 </a>
                 <a href="#">
                     <li>About</li>
@@ -46,8 +46,20 @@
 
         <!-- login & cart -->
         <div id="rightnav">
-            <a href="#"> Login/Register </a>
-            <a href="#"> Cart </a>
+            <?php
+                if (session_status() == PHP_SESSION_NONE) {
+                    session_start();
+                }
+                if(isset($_SESSION['login'])){
+                    if ($_SESSION['login'] == True){
+                        echo "<a href='./php/logout.php'> Logout </a>";
+                    }
+                }else{
+                    echo "<a href='./login.php'> Login/Register </a>";
+                };
+            ?>
+            
+            <!-- <a href="#"> Cart </a> -->
         </div>
     </nav>
 
