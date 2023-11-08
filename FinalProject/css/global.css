@@ -58,6 +58,13 @@ h4 {
   display: flex;
 }
 
+input {
+  margin: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 /* ---------------------------- NAVBAR ---------------------------- */
 .navbar {
   display: flex;

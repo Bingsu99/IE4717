@@ -4,7 +4,7 @@ use yunan;
 
 -- Create Users table
 CREATE TABLE Users (
-    UserID INT PRIMARY KEY,
+    UserID INT AUTO_INCREMENT PRIMARY KEY ,
     firstName VARCHAR(50),
     lastName VARCHAR(50),
     email VARCHAR(100),
@@ -18,7 +18,7 @@ CREATE TABLE Users (
 
 -- Create Menus table
 CREATE TABLE Menus (
-    MenuID INT PRIMARY KEY,
+    MenuID INT AUTO_INCREMENT PRIMARY KEY,
     MenuName VARCHAR(50),
     MenuDescription TEXT,
     MenuImage LONGBLOB
@@ -26,17 +26,15 @@ CREATE TABLE Menus (
 
 -- Create Orders table
 CREATE TABLE Orders (
-    OrderID INT PRIMARY KEY,
+    OrderID INT AUTO_INCREMENT PRIMARY KEY,
     UserID INT,
     delivery_datetime DATETIME,
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
-
--- ADD ITEM NAME
 -- Create Items table
 CREATE TABLE Items (
-    ItemID INT PRIMARY KEY,
+    ItemID INT AUTO_INCREMENT PRIMARY KEY,
     MenuID INT,
     ItemName VARCHAR(50),
     ItemDescription TEXT,
@@ -55,6 +53,13 @@ CREATE TABLE OrderItems (
     FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
     FOREIGN KEY (ItemID) REFERENCES Items(ItemID)
 );
+
+-- Adding Fake Users
+INSERT INTO Users (UserID, firstName, lastName, email, password, phone, address, unit, postalCode, userType)
+VALUES
+(1, 'John', 'Doe', 'abc@abc.com', '123', '1234567890', '123 Main St', 'Apt 101', '12345', 'Member'),
+(2, 'Jane', 'Smith', 'def@def.com', '456', '9876543210', '456 Elm St', 'Apt 202', '56789', 'Member'),
+(3, 'Alice', 'Johnson', 'ghi@ghi.com', '789', '5551112222', '789 Oak St', 'Apt 303', '98765', 'Member');
 
 
 -- Set the base path as a variable
