@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/delivery.css" />
+    <script type="text/javascript" src="./js/deliveryDetails.js"></script>
 </head>
 
 <body>

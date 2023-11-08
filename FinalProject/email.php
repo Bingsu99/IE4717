@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>Document</title>
     <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/email.css" />
-  </head>
+</head>
 
-  <body>
-  <nav class="navbar container">
+<body>
+    <nav class="navbar container">
         <!-- hamburger -->
         <div id="menuToggle" class="left-menu">
             <!-- hamburger -->
@@ -57,83 +58,88 @@
                     echo "<a href='./login.php'> Login/Register </a>";
                 };
             ?>
-            
+
             <!-- <a href="#"> Cart </a> -->
         </div>
     </nav>
-    
+
     <?php
-      session_start();
+        // session_start();
+        echo '<pre>';
+        print_r($_SESSION);
+        echo '</pre>';
 
-      if (isset($_SESSION['deliveryDetails'][0]) && isset($_SESSION['cart'])) {
-        $details = $_SESSION['deliveryDetails'][0];
-        $cartItems = $_SESSION['cart'];
+        if (isset($_SESSION['deliveryDetails']) && isset($_SESSION['cart'])) {
+            $details = $_SESSION['deliveryDetails'];
+            $cartItems = $_SESSION['cart'];
 
 
-        $itemsOutputString = ''; // Initialize the output string
-        foreach ($cartItems as $item) {
-            $itemsOutputString .= "- " . $item['quantity'] . ' x ' . $item['itemName'] . "\n";
-        }
+            $itemsOutputString = ''; // Initialize the output string
+            foreach ($cartItems as $item) {
+                $itemsOutputString .= "- " . $item['quantity'] . ' x ' . $item['itemName'] . "\n";
+            }
 
-        $to = "f32ee@localhost";
-        $subject = "Your Food Catering Order Details";
-        $message = "Dear {$details['firstName']} {$details['lastName']},\n\n".
-        "Thank you for choosing our catering services for your event. We're excited to confirm your order and provide you with the necessary details:\n\n".
-        "Order Details:\n".
-        "- Delivery Time: {$details['date']}\n".
-        "- Delivery Time: {$details['time']}\n".
-        "- Delivery Address: {$details['Address']}, {$details['Unit']}, {$details['Postal']}\n".
-        "- Phone: {$details['Phone']}\n".
-        "- Total Cost: {$_SESSION['totalcost']}\n\n".
-        
-        "List of Items Ordered:\n".
-        "{$itemsOutputString}\n".
-        
-        "We are committed to ensuring your event is a success with our delicious and freshly prepared food. If you have any specific requests or changes to the order, please let us know as soon as possible.\n\n".
-        
-        "Please note that our team will arrive at the specified delivery time with your order to the provided delivery address. If there are any updates or changes regarding the delivery, we will inform you promptly.\n\n".
-        
-        "If you have any further inquiries or need assistance, feel free to reach out to our customer service team at +65 9876 5432.\n\n".
-        
-        "We appreciate your trust in our catering services and look forward to serving you.\n\n".
-        
-        "Best Regards,\n".
-        "Yunan Catering";
+            $to = "f32ee@localhost";
+            $subject = "Your Food Catering Order Details";
+            $message = "Dear {$details['firstName']} {$details['lastName']},\n\n".
+            "Thank you for choosing our catering services for your event. We're excited to confirm your order and provide you with the necessary details:\n\n".
+            "Order Details:\n".
+            "- Delivery Time: {$details['date']}\n".
+            "- Delivery Time: {$details['time']}\n".
+            "- Delivery Address: {$details['Address']}, {$details['Unit']}, {$details['Postal']}\n".
+            "- Phone: {$details['Phone']}\n".
+            "- Total Cost: {$_SESSION['totalcost']}\n\n".
+            
+            "List of Items Ordered:\n".
+            "{$itemsOutputString}\n".
+            
+            "We are committed to ensuring your event is a success with our delicious and freshly prepared food. If you have any specific requests or changes to the order, please let us know as soon as possible.\n\n".
+            
+            "Please note that our team will arrive at the specified delivery time with your order to the provided delivery address. If there are any updates or changes regarding the delivery, we will inform you promptly.\n\n".
+            
+            "If you have any further inquiries or need assistance, feel free to reach out to our customer service team at +65 9876 5432.\n\n".
+            
+            "We appreciate your trust in our catering services and look forward to serving you.\n\n".
+            
+            "Best Regards,\n".
+            "Yunan Catering";
 
-        // Additional headers
-        $headers = "From: f31ee@localhost\r\n";
-        $headers .= "Reply-To: f31ee@localhost\r\n";
-        $headers .= "X-Mailer: PHP/" . phpversion();
+            // Additional headers
+            $headers = "From: f31ee@localhost\r\n";
+            $headers .= "Reply-To: f31ee@localhost\r\n";
+            $headers .= "X-Mailer: PHP/" . phpversion();
 
-        // Attempt to send the email
-        if (mail($to, $subject, $message, $headers, "-f31ee@localhost")) {
+            // Attempt to send the email
+            if (mail($to, $subject, $message, $headers, "-f31ee@localhost")) {
+                echo "<div class='confirmation-content'>
+                        <span>WE MUST SAY.</span>
+                        <span>YOU'VE A GREAT CHOICE OF TASTE!</span>
+                        <img src='./assets/deliverybear.gif' class='delivery-image'>
+                        <span>YOUR ORDER WAS COMPLETED SUCESSFULLY</span>
+                        <span>A EMAIL RECEIPT INCLUDING THE DETAILS ABOUT YOUR ORDER HAS BEEN SENT TO THE EMAIL PROVIDED</span>
+                        <button type='button' style='margin-top: 10px;' class='orderBtn'><a href='index.php' class='no-style'>Continue Browsing</a></button>
+                        </div>";
+                unset($_SESSION['cart']);
+                unset($_SESSION['deliveryDetails']);
+                unset($_SESSION['totalcost']);
+            } else {
+                echo "<div class='confirmation-content'>
+                        <span>Something went wrong</span>
+                        <img src='./assets/deliverybear.gif' class='delivery-image'>
+                        <span>PLEASE TRY AGAIN LATER</span>
+                        <span>ERR: Failed to sent email</span>
+                        <button type='button' style='margin-top: 10px;' class='orderBtn'><a href='index.php' class='no-style'>Continue Browsing</a></button>
+                        </div>";
+            } 
+        }else{
             echo "<div class='confirmation-content'>
-                    <span>WE MUST SAY.</span>
-                    <span>YOU'VE A GREAT CHOICE OF TASTE!</span>
-                    <img src='./assets/deliverybear.gif' class='delivery-image'>
-                    <span>YOUR ORDER WAS COMPLETED SUCESSFULLY</span>
-                    <span>A EMAIL RECEIPT INCLUDING THE DETAILS ABOUT YOUR ORDER HAS BEEN SENT TO THE EMAIL PROVIDED</span>
-                    <button type='button' style='margin-top: 10px;' class='orderBtn'><a href='index.php' class='no-style'>Continue Browsing</a></button>
-                    </div>";
-            unset($_SESSION['cart']);
-        } else {
-            echo "<div class='confirmation-content'>
-                    <span>Something went wrong</span>
-                    <img src='./assets/deliverybear.gif' class='delivery-image'>
-                    <span>PLEASE TRY AGAIN LATER</span>
-                    <span>ERR: Failed to sent email</span>
-                    <button type='button' style='margin-top: 10px;' class='orderBtn'><a href='index.php' class='no-style'>Continue Browsing</a></button>
-                    </div>";
+                <span>Something went wrong</span>
+                <img src='./assets/deliverybear.gif' class='delivery-image'>
+                <span>PLEASE TRY AGAIN LATER</span>
+                <span>ERR: Cart or Details Empty</span>
+                <button type='button' style='margin-top: 10px;' class='orderBtn'><a href='index.php' class='no-style'>Continue Browsing</a></button>
+                </div>";
         }
-      }else{
-        echo "<div class='confirmation-content'>
-                    <span>Something went wrong</span>
-                    <img src='./assets/deliverybear.gif' class='delivery-image'>
-                    <span>PLEASE TRY AGAIN LATER</span>
-                    <span>ERR: Cart or Details Empty</span>
-                    <button type='button' style='margin-top: 10px;' class='orderBtn'><a href='index.php' class='no-style'>Continue Browsing</a></button>
-                    </div>";
-      }
       
     ?>
 
@@ -189,6 +195,6 @@
         </div>
 
     </footer>
-  </body>
-</html>
+</body>
 
+</html>

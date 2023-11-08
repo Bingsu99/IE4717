@@ -21,23 +21,24 @@ session_start();
 
 include "./dbconnect.php";
 
-// Create an SQL query to insert the data
-$query = "INSERT INTO `orders`(`UserID`, `delivery_datetime`) VALUES ('0', NOW())";
+// orders DB
+$query = "INSERT INTO `orders`(`UserID`, `delivery_datetime`) VALUES ('1', NOW())";
+echo $query;
 
-// Execute the query
 if ($dbcnx->query($query) === TRUE) {
     echo "Record inserted successfully.";
 } else {
     echo "Orders Error: " . $query . "<br>" . $dbcnx->error;
 }
 
+
 $query = "SELECT OrderID FROM `orders`
           ORDER BY `delivery_datetime` DESC
           LIMIT 1;";
 $result = $dbcnx->query($query)->fetch_assoc();
 
+// orderItems DB
 $cartItems = $_SESSION['cart'];
-
 if (!empty($cartItems)) {
     foreach ($cartItems as $item) {
         $qty = $item['quantity'];
@@ -57,5 +58,8 @@ if (!empty($cartItems)) {
 }
 
 $dbcnx->close();
+
+$redirect_url = '../email.php';
+header("Location: $redirect_url");
 
 ?>
