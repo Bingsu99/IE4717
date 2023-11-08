@@ -88,7 +88,7 @@
                   {$row['MenuName']}
                   <hr/>
                   $$menuCost
-                  <p>Description</p>
+                  <p>{$row['MenuDescription']}</p>
                   <form
                     name='menuForm'
                     action='./customise.php'
