@@ -1,0 +1,28 @@
+.info {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.info div {
+  min-width: 250px;
+  min-height: 170px;
+  margin: 0 1rem;
+  padding: 1rem;
+  background-color: lightblue;
+}
+/*  */
+
+.totalCost {
+  margin: 1.5rem 6rem;
+  background-color: #ede7db;
+}
+#addFee, #grandTotal{
+    background-color: white;
+}
+
+
+/*  */
+.alignRight {
+  text-align: right;
+}

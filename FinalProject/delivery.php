@@ -29,7 +29,7 @@
       }
     ?>
 
-<nav class="navbar container">
+    <nav class="navbar container">
         <!-- hamburger -->
         <div id="menuToggle" class="left-menu">
             <!-- hamburger -->
@@ -78,12 +78,12 @@
                     echo "<a href='./login.php'> Login/Register </a>";
                 };
             ?>
-            
+
             <!-- <a href="#"> Cart </a> -->
         </div>
     </nav>
 
-    <div class="content-container" style="margin-top: 4rem;">
+    <div class="content-container container">
         <table class="order-table">
             <tr>
                 <td colspan='2'><b>Your Order</b>
@@ -128,24 +128,25 @@
                 <h3>Personal Information</h3>
                 <table>
                     <tr>
-                        
-                        <td><input type="text" name="firstname" placeholder="First Name" 
+
+                        <td><input type="text" name="firstname" placeholder="First Name"
                                 <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['firstName']. '\'' : "";?>
-                            required></td>
+                                required></td>
                         <td><input type="text" name="lastname" placeholder="Last Name"
                                 <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['lastName']. '\'' : "";?>
-                            required></td>
+                                required></td>
                     </tr>
                     <tr>
-                        <td colspan='2'><input type="email" name="email" placeholder="Email" class='twoCol' 
-                                        <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['email']. '\'' : "";?>
-                                        required>
+                        <td colspan='2'><input type="email" name="email" placeholder="Email" class='twoCol'
+                                <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['email']. '\'' : "";?>
+                                required>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan='2'><input type="tel" name="phone" pattern="[0-9]{8}" placeholder="Contact Number" class='twoCol' 
-                                        <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Phone']. '\'' : "";?>
-                                        required>
+                        <td colspan='2'><input type="tel" name="phone" pattern="[0-9]{8}" placeholder="Contact Number"
+                                class='twoCol'
+                                <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Phone']. '\'' : "";?>
+                                required>
                         </td>
                     </tr>
                 </table>
@@ -153,19 +154,19 @@
                 <h3>Delivery Address</h3>
                 <table>
                     <tr>
-                        <td colspan='2'><input type="text" name="address" placeholder="Address" class='twoCol' 
-                                        <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Address']. '\'' : "";?>
-                                        required>
+                        <td colspan='2'><input type="text" name="address" placeholder="Address" class='twoCol'
+                                <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Address']. '\'' : "";?>
+                                required>
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="unit" placeholder="Unit" 
-                            <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Unit']. '\'' : "";?>
-                            required>
+                        <td><input type="text" name="unit" placeholder="Unit"
+                                <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Unit']. '\'' : "";?>
+                                required>
                         </td>
-                        <td><input type="text" name="postal" placeholder="Postal Code" 
-                            <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Postal']. '\'' : "";?>
-                            required>
+                        <td><input type="text" name="postal" placeholder="Postal Code"
+                                <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Postal']. '\'' : "";?>
+                                required>
                         </td>
                     </tr>
                 </table>
@@ -183,6 +184,60 @@
     </div>
 
 
+
+    <!-- footer -->
+    <footer class="container" style="margin-top: 5rem;">
+        <div class="footer-column">
+            <h4>Account</h4>
+            <ul>
+                <li><a href="#"> Manage Account</a></li>
+                <li><a href="#">Orders</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Catering</h4>
+            <ul>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">What's New</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Media Post</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Term & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Reviews</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Newsletter</h4>
+            <form action="" method="post" style="color: #fffcf8c0; font-size: 12px;">
+                <label for="email" style="color: #fffcf8c0;">Email*</label><br>
+                <input type="email" name="email" id="email" placeholder="Email">
+                <p style="color: #fffcf8c0; margin-top: 0%; margin-bottom: .5rem;">Subscribe for the latest menu
+                    launches and updates</p>
+
+                <input type="checkbox" name="consent" id="consent">
+                <label for="consent">I consent to recieve marketing communications from Yunnan Catering</label>
+                <br><br>
+
+                <input type="submit" value="Submit" class="orderBtn">
+            </form>
+        </div>
+        <div class="footer-column">
+            <ul class="itemsFlex logo">
+                <li><a href="#"><img src="./images/Facebook.png" alt="Facebook logo" height="40"></a></li>
+                <li><a href="#"><img src="./images/Instagram.png" alt="Facebook logo" height="40"></a></li>
+                <li><img src="./images/halal logo.png" alt="Facebook logo" height="40"></li>
+            </ul>
+        </div>
+
+    </footer>
 </body>
 
 </html>

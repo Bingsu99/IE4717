@@ -15,8 +15,47 @@ INSERT INTO `users`(`firstName`, `lastName`, `email`, `password`, `phone`, `addr
 session_start();
 
 // Display all session variables
-echo '<pre>';
-print_r($_SESSION);
-echo '</pre>';
+// echo '<pre>';
+// print_r($_SESSION);
+// echo '</pre>';
+
+include "./dbconnect.php";
+
+// Create an SQL query to insert the data
+$query = "INSERT INTO `orders`(`UserID`, `delivery_datetime`) VALUES ('0', NOW())";
+
+// Execute the query
+if ($dbcnx->query($query) === TRUE) {
+    echo "Record inserted successfully.";
+} else {
+    echo "Orders Error: " . $query . "<br>" . $dbcnx->error;
+}
+
+$query = "SELECT OrderID FROM `orders`
+          ORDER BY `delivery_datetime` DESC
+          LIMIT 1;";
+$result = $dbcnx->query($query)->fetch_assoc();
+
+$cartItems = $_SESSION['cart'];
+
+if (!empty($cartItems)) {
+    foreach ($cartItems as $item) {
+        $qty = $item['quantity'];
+        $itemID = $item['itemID'];
+
+        echo $qty . $itemID . $result['OrderID'] . "<br>";
+
+        $query = "INSERT INTO `orderitems` (`OrderID`, `ItemID`, `Quantity`) VALUES ($result[OrderID], $itemID, $qty)";
+        echo $query;
+        
+        if ($dbcnx->query($query) === TRUE) {
+            echo "Record inserted successfully.";
+        } else {
+            echo "Orderitems Error: " . $query . "<br>" . $dbcnx->error;
+        }
+    }                    
+}
+
+$dbcnx->close();
 
 ?>

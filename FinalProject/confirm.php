@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <title>Document</title>
     <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/confirm.css" />
 </head>
 
 <body>
@@ -12,16 +13,16 @@
       session_start();
 
       // Display all session variables
-      echo '<pre>';
-      print_r($_SESSION);
-      echo '</pre>';
+    //   echo '<pre>';
+    //   print_r($_SESSION);
+    //   echo '</pre>';
 
         // Initialize an array to store itemID, quantity, name, price
         $DeliveryDetails = array();
             
         // Check if there are parameters in the GET request
         if (!empty($_GET)) {
-            $DeliveryDetails[] = array(
+            $DeliveryDetails = array(
                 "firstName" => $_GET['firstname'],
                 "lastName" => $_GET['lastname'],
                 "email" => $_GET['email'],
@@ -38,7 +39,7 @@
                
     ?>
 
-<nav class="navbar container">
+    <nav class="navbar container">
         <!-- hamburger -->
         <div id="menuToggle" class="left-menu">
             <!-- hamburger -->
@@ -87,14 +88,14 @@
                     echo "<a href='./login.php'> Login/Register </a>";
                 };
             ?>
-            
+
             <!-- <a href="#"> Cart </a> -->
         </div>
     </nav>
 
     <!-- ==============================  body content  ============================== -->
 
-    <div class="container">
+    <div class="container order">
         <div id="cusOrder">
             <h2>Your Order</h2>
             <?php
@@ -103,20 +104,22 @@
 
                 // Check if there are items in the cart
                 if (!empty($cartItems)) {
-                    echo "<table>";
-                    echo "<tr>";
-                    echo "<th>Item Name</th>";
-                    echo "<th>Quantity</th>";
-                    echo "<th>Cost</th>";
-                    echo "</tr>";
+                    echo "
+                    <table>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Quantity</th>
+                            <th>Cost</th>
+                        </tr>";
                     
                     // Iterate through each item in the cart and display its details
                     foreach ($cartItems as $item) {
-                        echo "<tr>";
-                        echo "<td>{$item['itemName']}</td>";
-                        echo "<td>{$item['quantity']}</td>";
-                        echo "<td>\${$item['cost']}</td>";
-                        echo "</tr>";
+                        echo "
+                        <tr>
+                            <td>{$item['itemName']}</td>
+                            <td>{$item['quantity']}</td>
+                            <td>\${$item['cost']}</td>
+                        </tr>";
                     }
                     
                     echo "</table>";
@@ -134,92 +137,121 @@
 
     <div class="container">
         <h2>Your Information</h2>
-        <table>
+        <div class="itemsFlex info">
+            <div>
+                <h3>Personal Information</h3>
+                <p>
+                    <?php
+                    $deliveryDetails = $_SESSION['deliveryDetails'];
+
+                    if (!empty($deliveryDetails)) {
+                        echo 
+                            "<strong>First Name:</strong> {$deliveryDetails['firstName']} <br>
+                            <strong>Last Name:</strong> {$deliveryDetails['lastName']} <br>
+                            <strong>Email:</strong> {$deliveryDetails['email']} <br>
+                            <strong>Phone:</strong> {$deliveryDetails['Phone']} <br>
+                        ";
+                    } else {
+                        echo "No delivery details available.";
+                    }
+                    ?>
+                </p>
+            </div>
+            <div>
+                <h3>Billing Address</h3>
+                <p>
+                    <?php
+                    $deliveryDetails = $_SESSION['deliveryDetails'];
+
+                    if (!empty($deliveryDetails)) {
+                        echo 
+                            "<strong>Address:</strong> {$deliveryDetails['Address']} <br>
+                            <strong>Unit:</strong> {$deliveryDetails['Unit']} <br>
+                            <strong>Postal Code:</strong> {$deliveryDetails['Postal']} <br>
+                        ";
+                    } else {
+                        echo "No delivery details available.";
+                    }
+                    ?>
+                </p>
+            </div>
+        </div>
+        <div class="itemsFlex info">
+            <div>
+                <h3>Delivery Details</h3>
+                <p>
+                    <?php
+                    $deliveryDetails = $_SESSION['deliveryDetails'];
+
+                    if (!empty($deliveryDetails)) {
+                        echo 
+                            "<strong>Date:</strong> {$deliveryDetails['date']} <br>
+                            <strong>Time:</strong> {$deliveryDetails['time']} <br>
+                        ";
+                    } else {
+                        echo "No delivery details available.";
+                    }
+                    ?>
+                </p>
+            </div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="container totalCost">
+        <?php
+            $cartItems = $_SESSION['cart'];
+            $totalPrice = 0;
+            $deliveryFee = 10;
+                
+            if (!empty($cartItems)) {
+                foreach ($cartItems as $item) {
+                    $cost = $item['cost'] * $item['quantity'];
+                    $totalPrice += $cost;
+                }                    
+            } else {
+                echo "Your cart is empty.";
+            }
+            $promo = $totalPrice * 0.05;
+            $GST = (($totalPrice - $promo) + $deliveryFee) * 0.08;
+            $grandTotal = ($totalPrice - $promo) + $GST;
+            $_SESSION['totalcost'] = round($grandTotal, 2);
+        ?>
+        <table id="addFee">
             <tr>
-                <th>Personal Information</th>
-                <th>Billing Address</th>
+                <td>SubTotal</td>
+                <td><?php echo "$".$totalPrice; ?></td>
             </tr>
             <tr>
-                <td>Personal Information</td>
-                <td>Billing Address</td>
+                <td>Delivery Fee</td>
+                <td><?php echo "$".$deliveryFee; ?></td>
             </tr>
             <tr>
-                <td>Personal Information</td>
-                <td>Billing Address</td>
-            </tr>
-            <tr>
-                <th>Delivery Option</th>gitnk
-                <th></th>
-            </tr>
-            <tr>
-                <td>Personal Information</td>
-                <td>Billing Address</td>
-            </tr>
-            <tr>
-                <td>Personal Information</td>
-                <td>Billing Address</td>
+                <td>Promo - 5% discount</td>
+                <td><?php echo "$".$promo; ?></td>
             </tr>
         </table>
-
-
-
-        <!-- php code here -->
-
-        <?php
-// Access the "deliveryDetails" array within the larger array
-$deliveryDetails = $_SESSION['deliveryDetails'];
-
-// Check if there are delivery details
-if (!empty($deliveryDetails)) {
-    echo "<h2>Delivery Details:</h2>";
-    echo "<table>";
-    echo "<tr>";
-    echo "<th>First Name</th>";
-    echo "<th>Last Name</th>";
-    echo "<th>Email</th>";
-    echo "<th>Phone</th>";
-    echo "<th>Address</th>";
-    echo "<th>Unit</th>";
-    echo "<th>Postal Code</th>";
-    echo "<th>Date</th>";
-    echo "<th>Time</th>";
-    echo "</tr>";
-
-    // Iterate through the delivery details and display them
-    foreach ($deliveryDetails as $details) {
-        echo "<tr>";
-        echo "<td>{$details['firstName']}</td>";
-        echo "<td>{$details['lastName']}</td>";
-        echo "<td>{$details['email']}</td>";
-        echo "<td>{$details['Phone']}</td>";
-        echo "<td>{$details['Address']}</td>";
-        echo "<td>{$details['Unit']}</td>";
-        echo "<td>{$details['Postal']}</td>";
-        echo "<td>{$details['date']}</td>";
-        echo "<td>{$details['time']}</td>";
-        echo "</tr>";
-    }
-
-    echo "</table>";
-} else {
-    echo "No delivery details available.";
-}
-?>
-
-
+        <br>
+        <table id="grandTotal">
+            <tr>
+                <td>Grand Total</td>
+                <td><?php echo "$".$grandTotal; ?></td>
+            </tr>
+            <tr>
+                <td>Inclusive GST (8%)</td>
+                <td><?php echo "$".$GST; ?></td>
+            </tr>
+        </table>
     </div>
 
-    <div class="container">
-        <div id="addFee"></div>
-        <div id="grandTotal"></div>
-    </div>
-
-    <div class="container">
-        <form action="addOrder.php" method="get">
+    <div class="container alignRight">
+        <form action="./php/addOrder.php" method="get">
             <!-- <button type='button' class='orderBtn'><a href='delivery.php' class='no-style'>Back</a></button> -->
             <input type="submit" value="Make Payment" class="orderBtn">
         </form>
     </div>
+
+
 
 
 
