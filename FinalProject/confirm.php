@@ -95,9 +95,10 @@
 
     <!-- ==============================  body content  ============================== -->
 
-    <div class="container order">
+    <div class="container itemsFlex order">
         <div id="cusOrder">
-            <h2>Your Order</h2>
+            <h2 class="center">Your Order</h2>
+            <div class='divider' style="border: #232323 1px solid;"></div>
             <?php
                 // Access the "cart" array within the larger array
                 $cartItems = $_SESSION['cart'];
@@ -107,9 +108,9 @@
                     echo "
                     <table>
                         <tr>
-                            <th>Item Name</th>
-                            <th>Quantity</th>
-                            <th>Cost</th>
+                            <th style='text-align: left;'>Item Name</th>
+                            <th style='text-align: left;'>Quantity</th>
+                            <th style='text-align: left;'>Cost</th>
                         </tr>";
                     
                     // Iterate through each item in the cart and display its details
@@ -127,16 +128,21 @@
                     echo "Your cart is empty.";
                 }
             ?>
-
-            <div id="img">
-                <div id="img1"></div>
-                <div id="img2"></div>
-            </div>
+                <!-- <p class="center"><a href="./customise.php">Edit</a></p> -->
         </div>
+
+        <!-- <div id="img">
+            <div id="img1">
+                <img src="./assets/temp.jpg" alt="order img" width="200px">
+            </div>
+            <div id="img2">
+                <img src="./assets/temp3.jpg" alt="order img" width="200px">
+            </div>
+        </div> -->
     </div>
 
-    <div class="container">
-        <h2>Your Information</h2>
+    <div class="container" id="cusInfo">
+        <h2 class="center">Your Information</h2>
         <div class="itemsFlex info">
             <div>
                 <h3>Personal Information</h3>
@@ -198,7 +204,7 @@
         </div>
     </div>
 
-    <div class="container totalCost">
+    <div class="container itemsFlex totalCost">
         <?php
             $cartItems = $_SESSION['cart'];
             $totalPrice = 0;
@@ -220,26 +226,36 @@
         <table id="addFee">
             <tr>
                 <td>SubTotal</td>
-                <td><?php echo "$".$totalPrice; ?></td>
+                <td class="alignRight">
+                    <?php echo "$".$totalPrice; ?>
+                </td>
             </tr>
             <tr>
                 <td>Delivery Fee</td>
-                <td><?php echo "$".$deliveryFee; ?></td>
+                <td  class="alignRight">
+                    <?php echo "$".$deliveryFee; ?>
+                </td>
             </tr>
             <tr>
                 <td>Promo - 5% discount</td>
-                <td><?php echo "$".$promo; ?></td>
+                <td class="alignRight">
+                    <?php echo "$".$promo; ?>
+                </td>
             </tr>
         </table>
         <br>
         <table id="grandTotal">
             <tr>
                 <td>Grand Total</td>
-                <td><?php echo "$".$grandTotal; ?></td>
+                <td class="alignRight">
+                    <?php echo "$".$grandTotal; ?>
+                </td>
             </tr>
             <tr>
                 <td>Inclusive GST (8%)</td>
-                <td><?php echo "$".$GST; ?></td>
+                <td class="alignRight">
+                    <?php echo "$".$GST; ?>
+                </td>
             </tr>
         </table>
     </div>

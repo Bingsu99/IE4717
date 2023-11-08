@@ -130,21 +130,21 @@
                 <table>
                     <tr>
 
-                        <td><input type="text" name="firstname" placeholder="First Name"
+                        <td><input type="text" name="firstname" placeholder="First Name" id="firstname" onchange="chkName()"
                                 <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['firstName']. '\'' : "";?>
                                 required></td>
-                        <td><input type="text" name="lastname" placeholder="Last Name"
+                        <td><input type="text" name="lastname" placeholder="Last Name" id="lastname" onchange="chkName()"
                                 <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['lastName']. '\'' : "";?>
                                 required></td>
                     </tr>
                     <tr>
-                        <td colspan='2'><input type="email" name="email" placeholder="Email" class='twoCol'
+                        <td colspan='2'><input type="email" name="email" placeholder="Email" class='twoCol' id="email" onchange="chkEmail()"
                                 <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['email']. '\'' : "";?>
                                 required>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan='2'><input type="tel" name="phone" pattern="[0-9]{8}" placeholder="Contact Number"
+                        <td colspan='2'><input type="tel" name="phone" pattern="[0-9]{8}" placeholder="Contact Number" id="phone" onchange="checkPhoneDigits()"
                                 class='twoCol'
                                 <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Phone']. '\'' : "";?>
                                 required>
@@ -165,7 +165,7 @@
                                 <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Unit']. '\'' : "";?>
                                 required>
                         </td>
-                        <td><input type="text" name="postal" placeholder="Postal Code"
+                        <td><input type="text" name="postal" placeholder="Postal Code" pattern="[0-9]{6}" id="postal" onchange="chkPosterCode()"
                                 <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Postal']. '\'' : "";?>
                                 required>
                         </td>
@@ -174,12 +174,12 @@
                 <h3>Delivery Option</h3>
                 <table>
                     <tr>
-                        <td><input type="date" name="date" required></td>
+                        <td><input type="date" name="date" required id="date" onchange="chkStartDate()"></td>
                         <td><input type="time" name="time" required></td>
                     </tr>
                 </table>
                 <br>
-                <input type="submit" value="Next" style='float: right;' class="orderBtn">
+                <input type="submit" value="Next" class="orderBtn" id="submit" disabled >
             </form>
         </div>
     </div>

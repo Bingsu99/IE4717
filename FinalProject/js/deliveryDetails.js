@@ -1,17 +1,17 @@
 // // Added in for submission of form
 nameValid = false;
 emailValid = false;
+digitsValid = false;
 startDateValid = false;
-experienceValid = false;
 
 function checkFields() {
-  var submitButton = document.getElementById("Submit");
+  var submitButton = document.getElementById("submit");
   console.log("checking field");
   if (
     nameValid == true &&
     emailValid == true &&
-    startDateValid == true &&
-    experienceValid == true
+    digitsValid == true &&
+    startDateValid == true
   ) {
     submitButton.disabled = false;
   } else {
@@ -21,27 +21,36 @@ function checkFields() {
 
 // checking name
 function chkName() {
-  var name = document.getElementById("name").value;
-  //remove any whitespace from both ends of the string
-  name.trim();
+  var firstname = document.getElementById("firstname").value;
+  var lastname = document.getElementById("lastname").value;
 
-  if (name.length > 0) {
-    // make sure it is not empty
-    var regexp = /^([A-z',.\s?]+)$/;
-    if (regexp.test(name)) {
+  //remove any whitespace from both ends of the string
+  firstname = firstname.trim();
+  lastname = lastname.trim();
+
+  if (firstname.length > 0 || lastname.length > 0) {
+    // Make sure both fields are not empty
+    var nameRegExp = /^[A-Za-z]+$/;
+
+    if (nameRegExp.test(firstname)) {
+      nameValid = true;
+      checkFields();
+      return true;
+    } else if (nameRegExp.test(lastname)) {
       nameValid = true;
       checkFields();
       return true;
     } else {
       alert(
-        "Name has incorrect format, please enter alphabetical symbols separated with a blankspace."
+        "Name has incorrect format. Please enter alphabetical characters separated by spaces."
       );
       nameValid = false;
       checkFields();
       return false;
     }
   }
-  alert("Please fill in your name." + name);
+
+  alert("Please fill in your first name and last name, with letters only");
   nameValid = false;
   checkFields();
   return false;
@@ -60,14 +69,67 @@ function chkEmail() {
       checkFields();
       return true;
     } else {
-      alert("Email entered in wrong format.");
+      alert(
+        "Email entered in wrong format. Please fill in your email, with proper domain name"
+      );
       emailValid = false;
       checkFields();
       return false;
     }
   }
 
-  alert("Please fill in your email." + email);
+  alert("Please fill in your email.");
+  emailValid = false;
+  checkFields();
+  return false;
+}
+
+// checking 8 digits phone number
+function checkPhoneDigits(input) {
+  var phone = document.getElementById("phone").value;
+  phone.trim();
+
+  var regexp = /^\d{8}$/; // Regular expression to match exactly 8 digits
+  if (phone.length > 0) {
+    if (regexp.test(phone)) {
+      digitsValid = true;
+      checkFields();
+      return true;
+    } else {
+      alert(
+        "Phone number entered in wrong format. Please fill in your Phone number, with 8 digits only"
+      );
+      digitsValid = false;
+      checkFields();
+      return false;
+    }
+  }
+  alert("Please fill in your phone number, with 8 digits only");
+  emailValid = false;
+  checkFields();
+  return false;
+}
+
+function chkPosterCode(input) {
+  var postal = document.getElementById("postal").value;
+  postal.trim();
+
+  var regexp = /^\d{6}$/; // Regular expression to match exactly 8 digits
+  if (postal.length > 0) {
+    if (regexp.test(postal)) {
+      digitsValid = true;
+      checkFields();
+      return true;
+    } else {
+      alert(
+        "Poster Code entered in wrong format. Please fill in your Poster Code, with 6 digits only"
+      );
+      digitsValid = false;
+      checkFields();
+      return false;
+    }
+  }
+  alert("Please fill in your Poster Code, with 6 digits only");
   emailValid = false;
   checkFields();
   return false;
@@ -91,14 +153,20 @@ function chkStartDate() {
       return true;
     } else if (date.getMonth() == currentDate.getMonth()) {
       // check date
-      if (date.getDate() > currentDate.getDate()) {
+      if (date.getDate() > currentDate.getDate() + 3) {
         startDateValid = true;
         checkFields();
         return true;
       }
+      else{
+          alert("Catering date must be 3 day in advance.");
+          startDateValid = false;
+          checkFields();
+          return false;
+      }
     }
   }
-  alert("Date must be in the future. \n You chosen: " + date);
+  alert("Catering date must be 3 day in advance.");
   startDateValid = false;
   checkFields();
   return false;

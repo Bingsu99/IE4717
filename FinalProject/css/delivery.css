@@ -1,7 +1,7 @@
 .content-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .order-table {
@@ -30,4 +30,11 @@
 
 .twoCol {
   width: 97.5%;
+}
+
+#submit{
+  float: right;
+}
+#submit:disabled{
+  background-color: #deab7fbb;
 }
