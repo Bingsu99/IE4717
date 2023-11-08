@@ -132,7 +132,7 @@
 
         </div>
         <div class="more">
-            <a href="#">See More Packages</a>
+            <a href="./menu.php">See More Packages</a>
         </div>
     </section>
 

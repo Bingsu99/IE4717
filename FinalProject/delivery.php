@@ -103,6 +103,7 @@
                 };
                 echo "<tr><td colspan='2' style='text-align: center;'><hr>\${$totalPrice}</td></tr>";
                 $_SESSION['cart'] = $itemQuantities;
+                $_SESSION['totalcost'] = $totalPrice;
               }          
             ?>
 
