@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>Document</title>
     <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/customise.css" />
     <script type="text/javaScript" src="./js/customise.js"></script>
-  </head>
+</head>
 
-  <body>
+<body>
     <nav class="navbar container">
         <!-- hamburger -->
         <div id="menuToggle" class="left-menu">
@@ -50,17 +51,15 @@
             <a href="#"> Cart </a>
         </div>
     </nav>
-    
-    <form name='itemsForm'
-          action='./delivery.php'
-          method='get'>
-      <table class="items-table" id="itemsContainer">
-        <tr>
-            <td><b>Item & Description</b></td>
-            <td><b>Quantity</b></td>
-            <td><b>Price</b></td>
-        </tr>
-        <?php
+
+    <form name='itemsForm' action='./delivery.php' method='get'>
+        <table class="items-table" id="itemsContainer">
+            <tr>
+                <td><b>Item & Description</b></td>
+                <td><b>Quantity</b></td>
+                <td><b>Price</b></td>
+            </tr>
+            <?php
           if(isset($_GET['menu'])){
             $menuID = $_GET['menu'];
             include "./php/dbconnect.php";
@@ -91,19 +90,21 @@
             echo "No Menu Selected";
           }
         ?>
-        <tr>
-            <td></td>
-            <td>Total Price:</td>
-            <td><b>$<span id="totalPrice">0</span></b></td>
-        </tr>
-        <tr>
-            <td colspan="3" style="text-align: right;" >
-            <button type='button' class='orderBtn'><a href='menu.php' class='no-style'>Back</a></button>
-            <input type="submit" value="Next" class="orderBtn">
-            </td>
-        </tr>
-      </table>
+            <tr>
+                <td></td>
+                <td>Total Price:</td>
+                <td><b>$<span id="totalPrice">0</span></b></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: right;">
+                    <button type='button' class='orderBtn'><a href='menu.php' class='no-style'>Back</a></button>
+                    <input type="submit" value="Next" class="orderBtn">
+                </td>
+            </tr>
+        </table>
     </form>
+
+
     <footer class="container">
         <div class="footer-column">
             <h4>Account</h4>
@@ -156,6 +157,6 @@
         </div>
 
     </footer>
-  </body>
-</html>
+</body>
 
+</html>

@@ -83,7 +83,7 @@
 
             <?php 
                 include "./php/dbconnect.php";
-                $query = 'select * from menus';
+                $query = 'select * from menus LIMIT 3';
                 $result = $dbcnx->query($query);
                 $imageType = 'image/jpeg';
                 while($row =$result->fetch_assoc()){

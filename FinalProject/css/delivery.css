@@ -1,14 +1,17 @@
-/* .content-container {
-  text-align: center;
-} */
+.content-container {
+  /* display: flex;
+  justify-content: center; 
+  align-items: center;  */
+}
 
 .order-table {
   border: 1px solid black;
-  padding: 10px;
+  padding: 1rem;
   display: inline-block;
   vertical-align: top;
   margin-right: 50px;
   text-align: left;
+  margin: auto;
 }
 
 .price {
@@ -17,7 +20,7 @@
 
 .details {
   border: 1px solid black;
-  padding: 10px;
+  padding: 1rem;
   display: inline-block;
   vertical-align: top;
   margin-left: 50px;

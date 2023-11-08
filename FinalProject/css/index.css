@@ -34,17 +34,15 @@
 
 /*  */
 /*  ----------------------------  top picks  ----------------------------  */
-.itemsFlex {
-  display: flex;
-}
 #topPick{
   padding: 1.5rem 9.5rem;
 }
 .package {
   margin: auto;
-  min-height: 310px;
+  min-height: 500px;
   background-color: #FFFCF8;
   padding: 2rem;
+  border: #232323 solid 1px;
 }
 .package h3,
 .package h2 {
@@ -118,3 +116,6 @@
 }
 
 /* footer */
+#email{
+  padding: 1rem;
+}
