@@ -124,29 +124,45 @@
 
         <div class='details'>
             <h2>Delivery Details</h2>
+
+            <a href="./login.php" style="text-decoration: none; color: #232323;">
+                <button class="orderBtn">
+                    Login/Register
+                </button>
+            </a>
+
+            <div class="itemsFlex" style="width: 100%;">
+                <div class='divider'></div>
+                <p>OR</p>
+                <div class='divider'></div>
+            </div>
+
             <!-- <form class="details-form"> -->
             <form name='confirmForm' action='./confirm.php' method='get'>
                 <h3>Personal Information</h3>
                 <table>
                     <tr>
 
-                        <td><input type="text" name="firstname" placeholder="First Name" id="firstname" onchange="chkName()"
-                                <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['firstName']. '\'' : "";?>
+                        <td><input type="text" name="firstname" placeholder="First Name" id="firstname"
+                                onchange="chkName()" <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['
+                                deliveryDetails']['firstName']. '\'' : "";?>
                                 required></td>
                         <td><input type="text" name="lastname" placeholder="Last Name" id="lastname" onchange="chkName()"
-                                <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['lastName']. '\'' : "";?>
+                                <?php echo isset($_SESSION[' login']) ? 'value=\'' . $_SESSION['
+                                deliveryDetails']['lastName']. '\'' : "";?>
                                 required></td>
                     </tr>
                     <tr>
-                        <td colspan='2'><input type="email" name="email" placeholder="Email" class='twoCol' id="email" onchange="chkEmail()"
-                                <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['email']. '\'' : "";?>
+                        <td colspan=' 2'><input type="email" name="email" placeholder="Email" class='twoCol' id="email"
+                                onchange="chkEmail()" <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['
+                                deliveryDetails']['email']. '\'' : "";?>
                                 required>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan='2'><input type="tel" name="phone" pattern="[0-9]{8}" placeholder="Contact Number" id="phone" onchange="checkPhoneDigits()"
-                                class='twoCol'
-                                <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Phone']. '\'' : "";?>
+                        <td colspan=' 2'><input type="tel" name="phone" pattern="[0-9]{8}" placeholder="Contact Number"
+                                id="phone" onchange="checkPhoneDigits()" class='twoCol' <?php echo
+                                isset($_SESSION['login']) ? 'value=\'' . $_SESSION[' deliveryDetails']['Phone']. '\'' : "";?>
                                 required>
                         </td>
                     </tr>
@@ -155,18 +171,21 @@
                 <h3>Delivery Address</h3>
                 <table>
                     <tr>
-                        <td colspan='2'><input type="text" name="address" placeholder="Address" class='twoCol'
-                                <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Address']. '\'' : "";?>
+                        <td colspan=' 2'><input type="text" name="address" placeholder="Address" class='twoCol' <?php
+                                echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['
+                                deliveryDetails']['Address']. '\'' : "";?>
                                 required>
                         </td>
                     </tr>
                     <tr>
                         <td><input type="text" name="unit" placeholder="Unit"
-                                <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Unit']. '\'' : "";?>
+                                <?php echo isset($_SESSION[' login']) ? 'value=\'' . $_SESSION['
+                                deliveryDetails']['Unit']. '\'' : "";?>
                                 required>
                         </td>
                         <td><input type="text" name="postal" placeholder="Postal Code" pattern="[0-9]{6}" id="postal" onchange="chkPosterCode()"
-                                <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Postal']. '\'' : "";?>
+                                <?php echo isset($_SESSION[' login']) ? 'value=\'' . $_SESSION['
+                                deliveryDetails']['Postal']. '\'' : "";?>
                                 required>
                         </td>
                     </tr>
@@ -174,8 +193,8 @@
                 <h3>Delivery Option</h3>
                 <table>
                     <tr>
-                        <td><input type="date" name="date" required id="date" onchange="chkStartDate()"></td>
-                        <td><input type="time" name="time" required></td>
+                        <td style="width: 100%;"><input type="date" name="date" required id="date" onchange="chkStartDate()" style="width: 90%;"></td>
+                        <td style="width: 100%;"><input type="time" name="time" required style="width: 80%;"></td>
                     </tr>
                 </table>
                 <br>
@@ -199,10 +218,10 @@
             <h4>Catering</h4>
             <ul>
                 <li><a href="#">Menu</a></li>
-                <li><a href="#">What's New</a></li>
-                <li><a href="#">Service</a></li>
-                <li><a href="#">FAQ</a></li>
-            </ul>
+                <li><a href="#">What' s New</a></li>
+                            <li><a href="#">Service</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            </ul>
         </div>
         <div class="footer-column">
             <h4>Company</h4>
@@ -238,7 +257,7 @@
             </ul>
         </div>
 
-    </footer>
+        </footer>
 </body>
 
 </html>

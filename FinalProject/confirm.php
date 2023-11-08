@@ -239,7 +239,7 @@
             <tr>
                 <td>Promo - 5% discount</td>
                 <td class="alignRight">
-                    <?php echo "$".$promo; ?>
+                    <?php echo "$". round($promo,2); ?>
                 </td>
             </tr>
         </table>
@@ -248,13 +248,13 @@
             <tr>
                 <td>Grand Total</td>
                 <td class="alignRight">
-                    <?php echo "$".$grandTotal; ?>
+                    <?php echo "$". round($grandTotal,2); ?>
                 </td>
             </tr>
             <tr>
                 <td>Inclusive GST (8%)</td>
                 <td class="alignRight">
-                    <?php echo "$".$GST; ?>
+                    <?php echo "$". round($GST,2); ?>
                 </td>
             </tr>
         </table>
