@@ -124,7 +124,6 @@
                         echo
                             "<div class='totalPrice'>
                                 <h2>$$menuCost</h2>
-                                <p>per pax</p>
                                 <form
                                     name='menuForm'
                                     action='./customise.php'

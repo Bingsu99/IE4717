@@ -79,7 +79,7 @@
                 $itemsOutputString .= "- " . $item['quantity'] . ' x ' . $item['itemName'] . "\n";
             }
 
-            $to = "f32ee@localhost";
+            $to = "{$details['email']}";
             $subject = "Your Food Catering Order Details";
             $message = "Dear {$details['firstName']} {$details['lastName']},\n\n".
             "Thank you for choosing our catering services for your event. We're excited to confirm your order and provide you with the necessary details:\n\n".
@@ -105,12 +105,12 @@
             "Yunan Catering";
 
             // Additional headers
-            $headers = "From: f31ee@localhost\r\n";
-            $headers .= "Reply-To: f31ee@localhost\r\n";
+            $headers = "From: yunan@localhost\r\n";
+            $headers .= "Reply-To: yunan@localhost\r\n";
             $headers .= "X-Mailer: PHP/" . phpversion();
 
             // Attempt to send the email
-            if (mail($to, $subject, $message, $headers, "-f31ee@localhost")) {
+            if (mail($to, $subject, $message, $headers, "-yunan@localhost")) {
                 echo "<div class='confirmation-content'>
                         <span>WE MUST SAY.</span>
                         <span>YOU'VE A GREAT CHOICE OF TASTE!</span>

@@ -69,6 +69,7 @@
                         // Found a matching user
                         // Do something with the user data
                         $userDetails = array(
+                            "userID" => $row['UserID'],
                             "firstName" => $row['firstName'],
                             "lastName" => $row['lastName'],
                             "email" => $row['email'],

@@ -23,6 +23,7 @@
         // Check if there are parameters in the GET request
         if (!empty($_GET)) {
             $DeliveryDetails = array(
+                // "userID" => $_GET['UserID'],
                 "firstName" => $_GET['firstname'],
                 "lastName" => $_GET['lastname'],
                 "email" => $_GET['email'],
