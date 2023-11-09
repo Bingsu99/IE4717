@@ -144,26 +144,21 @@
                     <tr>
 
                         <td><input type="text" name="firstname" placeholder="First Name" id="firstname"
-                                onchange="chkName()" <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['
-                                deliveryDetails']['firstName']. '\'' : "";?>
+                                onchange="chkName()" <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['firstName']. '\'' : "";?>
                                 required></td>
                         <td><input type="text" name="lastname" placeholder="Last Name" id="lastname" onchange="chkName()"
-                                <?php echo isset($_SESSION[' login']) ? 'value=\'' . $_SESSION['
-                                deliveryDetails']['lastName']. '\'' : "";?>
+                                <?php echo isset($_SESSION[' login']) ? 'value=\'' . $_SESSION['deliveryDetails']['lastName']. '\'' : "";?>
                                 required></td>
                     </tr>
                     <tr>
                         <td colspan=' 2'><input type="email" name="email" placeholder="Email" class='twoCol' id="email"
-                                onchange="chkEmail()" <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['
-                                deliveryDetails']['email']. '\'' : "";?>
+                                onchange="chkEmail()" <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['email']. '\'' : "";?>
                                 required>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan=' 2'><input type="tel" name="phone" pattern="[0-9]{8}" placeholder="Contact Number"
-                                id="phone" onchange="checkPhoneDigits()" class='twoCol' <?php echo
-                                isset($_SESSION['login']) ? 'value=\'' . $_SESSION[' deliveryDetails']['Phone']. '\'' : "";?>
-                                required>
+                        <td colspan=' 2'><input type="tel" name="phone" pattern="[0-9]{8}" placeholder="Contact Number" id="phone" onchange="checkPhoneDigits()" class='twoCol'
+                        <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Phone']. '\'' : "";?> required>
                         </td>
                     </tr>
                 </table>
@@ -172,20 +167,17 @@
                 <table>
                     <tr>
                         <td colspan=' 2'><input type="text" name="address" placeholder="Address" class='twoCol' <?php
-                                echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['
-                                deliveryDetails']['Address']. '\'' : "";?>
+                                echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Address']. '\'' : "";?>
                                 required>
                         </td>
                     </tr>
                     <tr>
                         <td><input type="text" name="unit" placeholder="Unit"
-                                <?php echo isset($_SESSION[' login']) ? 'value=\'' . $_SESSION['
-                                deliveryDetails']['Unit']. '\'' : "";?>
+                                <?php echo isset($_SESSION[' login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Unit']. '\'' : "";?>
                                 required>
                         </td>
                         <td><input type="text" name="postal" placeholder="Postal Code" pattern="[0-9]{6}" id="postal" onchange="chkPosterCode()"
-                                <?php echo isset($_SESSION[' login']) ? 'value=\'' . $_SESSION['
-                                deliveryDetails']['Postal']. '\'' : "";?>
+                                <?php echo isset($_SESSION[' login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Postal']. '\'' : "";?>
                                 required>
                         </td>
                     </tr>
