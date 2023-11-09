@@ -10,9 +10,8 @@ session_start();
 include "./dbconnect.php";
 
 // orders DB
-$query = "INSERT INTO `orders`(`UserID`, `delivery_datetime`) VALUES ('1', NOW())";
-echo $query;
-
+$query = "INSERT INTO `orders`(`UserID`, `delivery_datetime`) VALUES ('{$_SESSION["deliveryDetails"]['userID']}', NOW())";
+// echo $query;
 if ($dbcnx->query($query) === TRUE) {
     echo "Record inserted successfully.";
 } else {

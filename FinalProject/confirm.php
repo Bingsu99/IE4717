@@ -33,7 +33,7 @@
                 "Postal" =>  $_GET['postal'],
                 "date" =>  $_GET['date'],
                 "time" =>  $_GET['time'],
-
+                'userID' => $_SESSION['deliveryDetails']['userID'],
                 );
             $_SESSION['deliveryDetails'] = $DeliveryDetails;
         }  
