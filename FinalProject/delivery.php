@@ -13,9 +13,9 @@
     <?php
       session_start();
 
-      // Display all session variables
+    //   Display all session variables
     //   echo '<pre>';
-    //   print_r($_SESSION);
+    //   print_r($_SESSION["deliveryDetails"]);
     //   echo '</pre>';
 
       include "./php/dbconnect.php";
@@ -147,7 +147,7 @@
                                 onchange="chkName()" <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['firstName']. '\'' : "";?>
                                 required></td>
                         <td><input type="text" name="lastname" placeholder="Last Name" id="lastname" onchange="chkName()"
-                                <?php echo isset($_SESSION[' login']) ? 'value=\'' . $_SESSION['deliveryDetails']['lastName']. '\'' : "";?>
+                            <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['lastName']. '\'' : "";?>
                                 required></td>
                     </tr>
                     <tr>
@@ -173,11 +173,11 @@
                     </tr>
                     <tr>
                         <td><input type="text" name="unit" placeholder="Unit"
-                                <?php echo isset($_SESSION[' login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Unit']. '\'' : "";?>
+                            <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Unit']. '\'' : "";?>
                                 required>
                         </td>
                         <td><input type="text" name="postal" placeholder="Postal Code" pattern="[0-9]{6}" id="postal" onchange="chkPosterCode()"
-                                <?php echo isset($_SESSION[' login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Postal']. '\'' : "";?>
+                            <?php echo isset($_SESSION['login']) ? 'value=\'' . $_SESSION['deliveryDetails']['Postal']. '\'' : "";?>
                                 required>
                         </td>
                     </tr>
